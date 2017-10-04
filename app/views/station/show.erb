@@ -1,3 +1,7 @@
 <h1> Here is yo Station! </h1>
 
 <h2><%= @stations.name %></h2>
+<form action="/stations/<%=@stations.id %>" method="POST" >
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Station">
+</form>
