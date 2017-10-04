@@ -28,11 +28,9 @@ class BikeShareApp < Sinatra::Base
     erb :'/station/edit'
   end
 
-
-
-  put '/stations/:name' do
-    @station = Station.update()
-    redirect "/stations/#{name}"
+  put '/stations/:id' do
+    @station = Station.update(params[:station])
+    redirect "/stations/#{params[:id]}"
   end
 
   get '/station-dashboard' do
