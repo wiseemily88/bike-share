@@ -4,14 +4,19 @@ class BikeShareApp < Sinatra::Base
     "hello"
   end
 
-  get '/station' do
+  get '/stations' do
     @stations = Station.all
     erb :'/station/index'
   end
 
+  get '/stations/new' do
+    erb :'/station/new'
+  end
+
+
   put '/stations/:name' do
     @station = Station.update()
-    redirect '/stations/#{name}'
+    redirect "/stations/#{name}"
   end
 
   get '/station-dashboard' do
