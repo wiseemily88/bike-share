@@ -23,3 +23,15 @@
 <% @stations.where(dock_count: lowest_count).each do |station| %>
   <p><%= station.name %></p>
 <% end %>
+
+<h2>Newest Station(s)</h2>
+<% newest = @stations.where(installation_date: @stations.maximum('installation_date')) %>
+<% newest.each do |station| %>
+  <p><%= station.name %></p>
+<% end %>
+
+<h2>Oldest Station(s)</h2>
+<% oldest = @stations.where(installation_date: @stations.minimum('installation_date')) %>
+<% oldest.each do |station| %>
+  <p><%= station.name %></p>
+<% end %>
