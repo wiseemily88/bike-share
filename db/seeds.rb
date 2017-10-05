@@ -7,8 +7,8 @@ class Seed
 
   def self.start
     seed_stations
-    seed_trips
-    seed_conditions
+    # seed_trips
+    # seed_conditions
   end
 
   def self.seed_stations
@@ -18,12 +18,12 @@ class Seed
     end
   end
 
-  def self.seed_trips
-    CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
-
-      Trip.create!(row.to_hash)
-    end
-  end
-end
+#   def self.seed_trips
+#     CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
+#
+#       Trip.create!(row.to_hash)
+#     end
+#   end
+ end
 
 Seed.start
