@@ -1,7 +1,18 @@
 <h1> Here is yo Station! </h1>
 
 <h2><%= @stations.name %></h2>
+
+<ul>
+  <li> City: <%= @stations.city %> </li>
+  <li> Dock Count: <%= @stations.dock_count %> </li>
+  <li> Install Date: <%= @stations.installation_date %> </li>
+</ul>
+
 <form action="/stations/<%=@stations.id %>" method="POST" >
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Station">
 </form>
+
+<a  href="/stations/<%=@stations.id%>/edit">
+  <button> Edit </button>
+</a>
