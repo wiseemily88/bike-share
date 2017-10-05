@@ -10,9 +10,13 @@
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete Station">
     </form>
-    
+
     <a  href="/stations/<%=station.id%>/edit">
       <button> Edit </button>
+    </a>
+
+     <a  href="/stations/<%=station.id%>">
+      <button> Show </button>
     </a>
   <% end %>
 </ul>
