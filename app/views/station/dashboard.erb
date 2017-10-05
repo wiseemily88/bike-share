@@ -1,3 +1,5 @@
 <h1>Station-Dashboard</h1>
 <h2>Station Count</h2>
 <p><%= @stations.count %></p>
+<h2>Average Bikes per Station</h2>
+<p><%= @stations.average("dock_count").floor %></p>
