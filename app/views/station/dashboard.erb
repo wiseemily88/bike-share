@@ -1,5 +1,25 @@
 <h1>Station-Dashboard</h1>
+
 <h2>Station Count</h2>
 <p><%= @stations.count %></p>
+
 <h2>Average Bikes per Station</h2>
 <p><%= @stations.average("dock_count").floor %></p>
+
+<h2>Highest Bike Count Available</h2>
+<p><%= @stations.maximum("dock_count")%></p>
+
+<h2>Station with the Highest Bike Count Available</h2>
+<% highest_count = @stations.maximum("dock_count")%>
+<% @stations.where(dock_count: highest_count).each do |station| %>
+  <p><%= station.name %></p>
+<% end %>
+
+<h2>Lowest Bike Count Available</h2>
+<p><%= @stations.minimum("dock_count")%></p>
+
+<h2>Station with the Lowest Bike Count Available</h2>
+<% lowest_count = @stations.minimum("dock_count")%>
+<% @stations.where(dock_count: lowest_count).each do |station| %>
+  <p><%= station.name %></p>
+<% end %>
