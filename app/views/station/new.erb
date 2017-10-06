@@ -1,8 +1,40 @@
-<form action='/stations' method = "post">
-  name: <input type= "text" name ="station[name]">
-  dock count: <input type= "text" name ="station[dock_count]">
-  city: <input type= "text" name ="station[city]">
-  installation date: <input type= "text" name ="station[installation_date]">
+<head>
+  <link rel="stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/station/new.css">
+</head>
 
-  <input type="submit" value ="Add Station">
+<form class="form-horizontal">
+  <fieldset>
+    <legend>New Station</legend>
+    <div class="control-group">
+      <label class="control-label" name ="station[name]">Station Name</label>
+      <div class="controls">
+        <input type="text" placeholder="station">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" name ="station[dock_count]">Number of Docks</label>
+      <div class="controls">
+        <input type="text" placeholder="docks">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" name ="station[city]">City</label>
+      <div class="controls">
+        <input type="text" placeholder="city">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" name ="station[installation_date]">Date Installed</label>
+      <div class="controls">
+        <input type="text" placeholder="date">
+      </div>
+    </div>
+    <br>
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn btn-info">Add New Station</button>
+      </div>
+    </div>
+  </fieldset>
 </form>
