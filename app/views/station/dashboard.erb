@@ -1,37 +1,101 @@
-<h1>Station-Dashboard</h1>
+<head>
+  <title>Station Dashboard</title>
+  <link rel="stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/station/new.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-<h2>Station Count</h2>
-<p><%= @stations.count %></p>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
 
-<h2>Average Bikes per Station</h2>
-<p><%= @stations.average("dock_count").floor %></p>
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
 
-<h2>Highest Bike Count Available</h2>
-<p><%= @stations.maximum("dock_count")%></p>
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;}
+    }
+  </style>
+</head>
+<body>
+  <div class="col-sm-9">
+      <div class="well">
+        <h1> Station Dashboard</hidden="">
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Station Count</h4>
+            <p><%= @stations.count %></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Average Bikes per Station</h4>
+            <p><%= @stations.average("dock_count").floor %></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Highest Bike Count Available</h4>
+            <p><%= @stations.maximum("dock_count")%></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Lowest Bike Count Available</h4>
+            <p><%= @stations.minimum("dock_count")%></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="well">
+            <h4>Station with the Highest Bike Count Available</h4>
+            <% highest_count = @stations.maximum("dock_count")%>
+            <% @stations.where(dock_count: highest_count).each do |station| %>
+              <p><%= station.name %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <h4>Station with the Lowest Bike Count Available</h4>
+            <% lowest_count = @stations.minimum("dock_count")%>
+            <% @stations.where(dock_count: lowest_count).each do |station| %>
+              <p><%= station.name %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <h4>Newest Station(s)</h4>
+            <% newest = @stations.where(installation_date: @stations.maximum('installation_date')) %>
+            <% newest.each do |station| %>
+              <p><%= station.name %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="well">
+            <h4>Oldest Station(s)</h4>
+            <% oldest = @stations.where(installation_date: @stations.minimum('installation_date')) %>
+            <% oldest.each do |station| %>
+              <p><%= station.name %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h2>Station with the Highest Bike Count Available</h2>
-<% highest_count = @stations.maximum("dock_count")%>
-<% @stations.where(dock_count: highest_count).each do |station| %>
-  <p><%= station.name %></p>
-<% end %>
-
-<h2>Lowest Bike Count Available</h2>
-<p><%= @stations.minimum("dock_count")%></p>
-
-<h2>Station with the Lowest Bike Count Available</h2>
-<% lowest_count = @stations.minimum("dock_count")%>
-<% @stations.where(dock_count: lowest_count).each do |station| %>
-  <p><%= station.name %></p>
-<% end %>
-
-<h2>Newest Station(s)</h2>
-<% newest = @stations.where(installation_date: @stations.maximum('installation_date')) %>
-<% newest.each do |station| %>
-  <p><%= station.name %></p>
-<% end %>
-
-<h2>Oldest Station(s)</h2>
-<% oldest = @stations.where(installation_date: @stations.minimum('installation_date')) %>
-<% oldest.each do |station| %>
-  <p><%= station.name %></p>
-<% end %>
+</body>
+</html>
