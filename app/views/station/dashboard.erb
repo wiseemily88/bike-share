@@ -6,27 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-  <style>
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 550px}
-
-    /* Set gray background color and 100% height */
-    .sidenav {
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-
-    /* On small screens, set height to 'auto' for the grid */
-    @media screen and (max-width: 767px) {
-      .row.content {height: auto;}
-    }
-  </style>
-</head>
 <body>
-  <div class="col-sm-9">
-      <div class="well">
-        <h1> Station Dashboard</hidden="">
+  <div class="col-sm-20">
+      <div class="Title">
+        <h1> Station Dashboard</h1>
       </div>
+
       <div class="row">
         <div class="col-sm-3">
           <div class="well">
@@ -53,8 +38,9 @@
           </div>
         </div>
       </div>
+
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="well">
             <h4>Station with the Highest Bike Count Available</h4>
             <% highest_count = @stations.maximum("dock_count")%>
@@ -63,7 +49,7 @@
             <% end %>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="well">
             <h4>Station with the Lowest Bike Count Available</h4>
             <% lowest_count = @stations.minimum("dock_count")%>
@@ -72,7 +58,10 @@
             <% end %>
           </div>
         </div>
-        <div class="col-sm-4">
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
           <div class="well">
             <h4>Newest Station(s)</h4>
             <% newest = @stations.where(installation_date: @stations.maximum('installation_date')) %>
@@ -81,9 +70,7 @@
             <% end %>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-6">
           <div class="well">
             <h4>Oldest Station(s)</h4>
             <% oldest = @stations.where(installation_date: @stations.minimum('installation_date')) %>
@@ -93,9 +80,5 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
