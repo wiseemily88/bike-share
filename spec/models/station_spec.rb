@@ -1,3 +1,5 @@
+require "spec_helper"
+
 describe Station do
 
   describe "Validation" do
@@ -32,11 +34,5 @@ describe Station do
       expect(station).to_not be_valid
     end
   end
-
-  # describe "Class Methods" do
-  #   describe "method" do
-  #     it ""
-  #   end
-  # end
 
 end
