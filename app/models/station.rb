@@ -7,6 +7,10 @@ class Station < ActiveRecord::Base
   validates :lat,               presence: true
   validates :long,              presence: true
 
+  def self.station_count
+    count
+  end
+  
   def self.average_bikes_per_stations
     average("dock_count").floor
   end
