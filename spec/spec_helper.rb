@@ -5,8 +5,10 @@ Bundler.require(:default, :test)
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec'
 require 'capybara/dsl'
-require 'Date'
-require 'DateTime'
+require 'date'
+
+
+
 
 Capybara.app = BikeShareApp
 
