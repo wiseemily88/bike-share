@@ -1,5 +1,7 @@
 class Station < ActiveRecord::Base
   scope :newest, -> { where(installation_date: maximum('installation_date')).first }
+  has_many :trips
+
   validates :name,              presence: true, uniqueness: true
   validates :dock_count,        presence: true
   validates :city,              presence: true
@@ -23,12 +25,7 @@ class Station < ActiveRecord::Base
     minimum("dock_count")
   end
 
-  def self.newest_station
-    maximum("installation_date")
-  end
-
   def self.oldest_station
     minimum("installation_date")
   end
-
 end

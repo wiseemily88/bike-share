@@ -1,6 +1,6 @@
 
-body {
-  background-image: url(https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiZhtq2td_WAhXGx4MKHSuFDr8QjRwIBw&url=http%3A%2F%2Fwww.sftodo.com%2Fbike-rental-san-francisco.html&psig=AOvVaw3M8PKUlZlpEEAZbSWJiHhY&ust=1507496786170348);
-
-
+.bg-1 {
+    font: 20px "Montserrat", sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
 }
