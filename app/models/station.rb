@@ -8,6 +8,7 @@ class Station < ActiveRecord::Base
   validates :lat,               presence: true
   validates :long,              presence: true
 
+
   def self.station_count
     count
   end
@@ -24,12 +25,10 @@ class Station < ActiveRecord::Base
     minimum("dock_count")
   end
 
-  def self.newest_station
-    maximum("installation_date")
-  end
-
   def self.oldest_station
     minimum("installation_date")
   end
+
+  scope :newest, -> { where(installation_date: maximum('installation_date')).first }
 
 end
