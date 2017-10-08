@@ -1,18 +1,72 @@
-<h1> Here is yo Station! </h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../station/show.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+  <body> 
+  
+    <form class="form-horizontal">
+      <fieldset>
+     <legend> <h2>Here is yo Station! <h2></legend>
+      
+        <h4><%= @stations.name %></h4>
 
-<h2><%= @stations.name %></h2>
+        <ul>
+          <li> City: <%= @stations.city %> </li>
+          <li> Dock Count: <%= @stations.dock_count %> </li>
+          <li> Install Date: <%= @stations.installation_date %> </li>
+        </ul>
+     
+      
 
-<ul>
-  <li> City: <%= @stations.city %> </li>
-  <li> Dock Count: <%= @stations.dock_count %> </li>
-  <li> Install Date: <%= @stations.installation_date %> </li>
-</ul>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Options <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="/stations/<%=@stations.id%>/edit">Edit</a></li>
+            <li class="delete-button"><form action="/stations/<%=@stations.id %>" method="POST" >
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="Delete Station">
+            </form></li>
+      </div><br>
+     </fieldset>
+    </form>
+  </body>
+</html>
 
-<form action="/stations/<%=@stations.id %>" method="POST" >
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Station">
-</form>
 
-<a  href="/stations/<%=@stations.id%>/edit">
-  <button> Edit </button>
-</a>
+
+
+
+
+
+<!-- 
+    <div class="dropdown">
+      <a class="dropdown-toggle">
+        <a  href="/stations/<%=@stations.id%>/edit" class="btn btn-info"> Edit </a>
+       
+        <form action="/stations/<%=@stations.id %>" method="POST" >
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete Station">
+        </form>
+
+      </div>
+    </div>   
+ -->
+   <!--  <select class="drop">
+        <option><a href="/stations/<%=@stations.id%>/edit"><i class="icon-pencil"></i> Edit</a></option>
+        <option>
+          <form action="/stations/<%=@stations.id%>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+          </form>
+        </option>
+    </select>
+ -->
+
+
+
