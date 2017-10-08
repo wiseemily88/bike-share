@@ -47,4 +47,15 @@ describe Station do
     end
   end
 
+  describe "Feature"
+    describe "when a user visits '/stations'" do
+      it "they see available stations" do
+        visit "/stations"
+
+        within("#body-content") do
+          expect(page).to have_content("Currently Available Stations!")
+        end
+      end
+    end
+
 end
