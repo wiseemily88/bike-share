@@ -17,7 +17,7 @@ RSpec.describe "When a user visits '/stations/:id'" do
     visit "/stations/#{station.id}"
   end
 
-  it "they see a station name" do      
+  it "they see a station name" do        
     expect(page).to have_content("Miami Bike")
   end
 
