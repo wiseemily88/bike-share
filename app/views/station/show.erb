@@ -10,16 +10,17 @@
   <body> 
   
     <form class="form-horizontal">
-      <fieldset>
-     <legend> <h2>Here is yo Station! <h2></legend>
+     
+     <legend> <h2 class="words">Here is yo Station! <h2></legend>
       
-        <h4><%= @stations.name %></h4>
+        <h3 class="words"><%= @stations.name %></h3>
+        <div class="line-separator"></div>
 
-        <ul>
-          <li> City: <%= @stations.city %> </li>
-          <li> Dock Count: <%= @stations.dock_count %> </li>
-          <li> Install Date: <%= @stations.installation_date %> </li>
-        </ul>
+      
+          <h5 class="info"> City: <%= @stations.city %> </h5>
+          <h5 class="info"> Dock Count: <%= @stations.dock_count %> </h5>
+          <h5 class="info"> Install Date: <%= @stations.installation_date %> </h5>
+        
      
       
 
@@ -34,7 +35,7 @@
               <input type="submit" value="Delete Station">
             </form></li>
       </div><br>
-     </fieldset>
+ 
     </form>
   </body>
 </html>
