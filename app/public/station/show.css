@@ -1,14 +1,41 @@
 body {
-  background-image: url("https://grist.files.wordpress.com/2010/04/denver-bike-sharing-station-bcycle.jpg") !important;
+  background-image: url("https://images.unsplash.com/photo-1455641374154-422f32e234cd?dpr=1&auto=compress,format&fit=crop&w=3589&h=&q=80&cs=tinysrgb&crop=") !important;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 1%; 
 }
 
+.words {
+
+  font-family: "Trebuchet MS";
+  font-size: 20px;
+  font-style: italic;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 22px;
+
+  text-align: center;
+  text-shadow: 2px 2px blue;
+  color: white;
+  background-color: powderblue;
 }
+
+.info {
+  font-family: "Trebuchet MS";
+  font-size: 20px;
+  font-style: italic;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 22px;
+
+  text-align: center;
+  text-shadow: 2px 2px blue;
+  color: white;
+  background-color: lightblue;
+}
+
 .dropdown {
-  margin: 1%;
-  color: red;
-  background-color: blue; 
-  color: #3F51B5;
+  margin: .5%;
 }
 
