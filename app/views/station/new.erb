@@ -3,39 +3,40 @@
   <link rel="stylesheet" type="text/css" href="/station/new.css">
 </head>
 
-<form class="form-horizontal">
-  <fieldset>
-    <legend>New Station</legend>
-    <div class="control-group">
-      <label class="control-label" name ="station[name]">Station Name</label>
-      <div class="controls">
-        <input type="text" placeholder="station">
+<div class="transbox">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>New Station</legend>
+      <div class="control-group">
+        <label class="control-label" name ="station[name]">Station Name</label>
+        <div class="controls">
+          <input type="text" placeholder="station">
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" name ="station[dock_count]">Number of Docks</label>
-      <div class="controls">
-        <input type="text" placeholder="docks">
+      <div class="control-group">
+        <label class="control-label" name ="station[dock_count]">Number of Docks</label>
+        <div class="controls">
+          <input type="integer" placeholder="docks">
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" name ="station[city]">City</label>
-      <div class="controls">
-        <input type="text" placeholder="city">
+      <div class="control-group">
+        <label class="control-label" name ="station[city]">City</label>
+        <div class="controls">
+          <input type="text" placeholder="city">
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" name ="station[installation_date]">Date Installed</label>
-      <div class="controls">
-        <input type="text" placeholder="date">
+      <div class="control-group">
+        <label class="control-label" name ="station[installation_date]">Date Installed</label>
+        <div class="controls">
+          <input type="date" placeholder="date">
+        </div>
       </div>
-    </div>
-    <br>
-    <div class="control-group">
-      <div class="controls">
-        <button type="submit" class="btn btn-info">Add New Station</button>
+      <br>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn btn-info">Add New Station</button>
+        </div>
       </div>
-    </div>
-  </fieldset>
-</form>
-
+    </fieldset>
+  </form>
+</div>
