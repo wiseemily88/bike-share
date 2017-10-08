@@ -1,0 +1,14 @@
+body {
+  background-image: url("https://grist.files.wordpress.com/2010/04/denver-bike-sharing-station-bcycle.jpg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+}
+.dropdown {
+  margin: 1%;
+  color: red;
+  background-color: blue; 
+  color: #3F51B5;
+}
+

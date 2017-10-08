@@ -24,6 +24,6 @@ class Seed
 #       Trip.create!(row.to_hash)
 #     end
 #   end
- end
+end
 
 Seed.start
