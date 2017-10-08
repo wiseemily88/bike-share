@@ -6,4 +6,6 @@ class Station < ActiveRecord::Base
   validates :installation_date, presence: true
   validates :lat,               presence: true
   validates :long,              presence: true
+
+  scope :newest, -> { where(installation_date: maximum('installation_date')).first }
 end
