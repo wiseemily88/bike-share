@@ -1,4 +1,6 @@
 class Station < ActiveRecord::Base
+has_many :start_trips, class_name: "Trip", foreign_key: "start_station_id"
+has_many :end_trips, class_name: "Trip", foreign_key: "end_station_id"
 
   validates :name,              presence: true, uniqueness: true
   validates :dock_count,        presence: true
@@ -10,7 +12,7 @@ class Station < ActiveRecord::Base
   def self.station_count
     count
   end
-  
+
   def self.average_bikes_per_stations
     average("dock_count").floor
   end
