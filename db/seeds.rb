@@ -18,12 +18,11 @@ class Seed
     end
   end
 
-#   def self.seed_trips
-#     CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
-#
-#       Trip.create!(row.to_hash)
-#     end
-#   end
+  # def self.seed_trips
+  #   CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
+  #     Trip.create!(row.to_hash)
+  #   end
+  # end
 end
 
 Seed.start
