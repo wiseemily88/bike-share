@@ -1,4 +1,5 @@
 class Station < ActiveRecord::Base
+  scope :newest, -> { where(installation_date: maximum('installation_date')).first }
   has_many :trips
 
   validates :name,              presence: true, uniqueness: true
@@ -20,5 +21,4 @@ class Station < ActiveRecord::Base
   def self.average_bikes_per_stations
     average("dock_count").floor
   end
-
 end

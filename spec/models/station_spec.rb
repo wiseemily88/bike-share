@@ -1,4 +1,3 @@
-
 require "spec_helper"
 
 describe Station do
@@ -51,8 +50,8 @@ describe Station do
 
   describe ".count" do
     it "returns total number of stations" do
-      Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
-      Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
+      Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8),long: 2.2, lat: 3.3)
+      Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 10, 8),long: 2.2, lat: 3.3)
 
       expect(Station.count).to eq(2)
     end
@@ -72,6 +71,7 @@ describe Station do
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
 
+
       expect(Station.highest_bike_count).to eq(15)
     end
   end
@@ -90,7 +90,7 @@ describe Station do
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
 
-      expect(Station.newest_station).to eq(Date.new(2015, 15, 8))
+      expect(Station.newest_station).to eq(Date.new(2015, 12, 8))
     end
   end
 
@@ -99,7 +99,7 @@ describe Station do
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
 
-      expect(Station.oldest_station).to eq(Date.new(2015, 12, 8))
+      expect(Station.oldest_station).to eq(Date.new(2015, 10, 8))
     end
   end
 
@@ -148,6 +148,6 @@ describe Station do
 
         expect(page).to have_content("Here is yo Station!")
       end
-    end    
+    end
   end
 end
