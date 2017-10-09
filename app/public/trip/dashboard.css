@@ -10,6 +10,9 @@ body {
   font-family: "Indie Flower";
 }
 h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   font-weight: bold;
   font-size: 60px;
   background: rgba(255,255,255,.5)
@@ -25,6 +28,6 @@ p {
 }
 
 .well {
-  color: black;
+  color: #333;
   background-color: #DDDDDD;
         }
