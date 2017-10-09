@@ -34,9 +34,11 @@ class Station < ActiveRecord::Base
   end
 
   def highest_end_station_count
-  
     start_trip_stations.group(:end_station_name).order("count_all").count.keys.last
+  end
 
+  def highest_origin_station_count
+    end_trip_stations.group(:start_station_name).order("count_all").count.keys.last
   end
 
 end
