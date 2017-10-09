@@ -15,4 +15,5 @@ class Trip < ActiveRecord::Base
   def self.sort_trips_by_start_date(page)
     sort_by("start_date").take(page*30).drop((page-1)*30)
   end
+
 end

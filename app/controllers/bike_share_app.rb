@@ -1,3 +1,4 @@
+require 'pry'
 class BikeShareApp < Sinatra::Base
 
   get '/' do
@@ -20,7 +21,9 @@ class BikeShareApp < Sinatra::Base
 
   get '/stations/:id' do
     @station = Station.find(params[:id])
+    binding.pry
     erb :'/station/show'
+
   end
 
   get '/stations/:id/edit' do
