@@ -45,5 +45,13 @@ class Station < ActiveRecord::Base
     start_trip_stations.group(:start_date).order("count_all").count.keys.last
   end
 
+  def most_frequent_zip_code
+    start_trip_stations.group(:zip_code).order("count_all").count.keys.last
+  end
+
+  def most_popular_bike_id
+    start_trip_stations.group(:bike_id).order("count_all").count.keys.last
+  end
+
 
 end
