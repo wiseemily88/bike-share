@@ -16,7 +16,7 @@
         <div class="row">
           <% @stations.each do |station| %>
             <div class="col-sm-6 col-md-4">
-              <h5> <%= station.name %> </h5>
+              <h4> <%= station.name %> </h4>
               <div class="col-sm-12">
                 <form action="/stations/<%=station.id %>" method="POST" >
                   <input type="hidden" name="_method" value="DELETE">
@@ -35,28 +35,3 @@
   </div>
 </body>
 </html>
-
-
-
-<!-- <h1>Currently Avialable Stations! </h1>
-
-<% @stations.each do |station| %>
-  <h3> <%= station.name %> </h3>
-
-  <form action="/stations/<%=station.id %>" method="POST" >
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" class="btn-danger" value="Delete Station">
-  </form>
-
-  <a  href="/stations/new">
-    <button type="submit" class="btn btn-info"> Create a new station </button>
-  </a>
-
-  <a  href="/stations/<%=station.id%>/edit">
-    <button type="submit" class="btn btn-info"> Edit </button>
-  </a>
-
-  <a  href="/stations/<%=station.id%>">
-    <button type="submit" class="btn btn-info"> Show </button>
-  </a>
-<% end %> -->

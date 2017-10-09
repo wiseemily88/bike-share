@@ -1,5 +1,5 @@
 class Station < ActiveRecord::Base
-  scope :newest, -> { where(installation_date: maximum('installation_date')).first }
+  
   has_many :trips
 
   validates :name,              presence: true, uniqueness: true
