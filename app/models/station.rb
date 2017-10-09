@@ -41,4 +41,9 @@ class Station < ActiveRecord::Base
     end_trip_stations.group(:start_station_name).order("count_all").count.keys.last
   end
 
+  def most_popular_date
+    start_trip_stations.group(:start_date).order("count_all").count.keys.last
+  end
+
+
 end

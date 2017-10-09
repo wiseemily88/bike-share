@@ -22,6 +22,7 @@
             <h5> Number of Trips Ended: <%= @station.trips_ended%> </h5>
             <h5> Most Frequent Destination: <%= @station.highest_end_station_count%> </h5>
             <h5> Most Frequent Origin: <%= @station.highest_origin_station_count%> </h5>
+            <h5> Most Popular Date: <%= @station.most_popular_date%> </h5>
 
             <div class="col-sm-12">
               <form action="/stations/<%=@station.id %>" method="POST" >
