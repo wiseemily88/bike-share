@@ -54,13 +54,8 @@ describe Station do
 
   describe ".count" do
     it "returns total number of stations" do
-<<<<<<< HEAD
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8),long: 2.2, lat: 3.3)
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 10, 8),long: 2.2, lat: 3.3)
-=======
-      Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
-      Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
->>>>>>> edb4f896f771eedea8fe6fadefec20ab4e9f019b
 
       expect(Station.count).to eq(2)
     end
@@ -68,13 +63,8 @@ describe Station do
 
   describe ".average_bikes_per_stations" do
     it "returns average bikes per station" do
-<<<<<<< HEAD
-      Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8),long: 2.2, lat: 3.3)
-      Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 10, 8),long: 2.2, lat: 3.3)
-=======
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
->>>>>>> edb4f896f771eedea8fe6fadefec20ab4e9f019b
 
       expect(Station.average_bikes_per_stations).to eq(14)
     end
@@ -82,13 +72,9 @@ describe Station do
 
   describe ".highest_bike_count" do
     it "returns bike count value" do
-<<<<<<< HEAD
-      Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8),long: 2.2, lat: 3.3)
-      Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 10, 8),long: 2.2, lat: 3.3)
-=======
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
->>>>>>> edb4f896f771eedea8fe6fadefec20ab4e9f019b
+
 
       expect(Station.highest_bike_count).to eq(15)
     end
@@ -96,13 +82,8 @@ describe Station do
 
   describe ".lowest_bike_count" do
     it "returns bike count value" do
-<<<<<<< HEAD
-      Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8),long: 2.2, lat: 3.3)
-      Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 10, 8),long: 2.2, lat: 3.3)
-=======
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
->>>>>>> edb4f896f771eedea8fe6fadefec20ab4e9f019b
 
       expect(Station.lowest_bike_count).to eq(13)
     end
@@ -110,13 +91,8 @@ describe Station do
 
   describe ".newest_station" do
     it "returns the date of the newest station" do
-<<<<<<< HEAD
-      Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8),long: 2.2, lat: 3.3)
-      Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 10, 8),long: 2.2, lat: 3.3)
-=======
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
->>>>>>> edb4f896f771eedea8fe6fadefec20ab4e9f019b
 
       expect(Station.newest_station).to eq(Date.new(2015, 12, 8))
     end
@@ -124,21 +100,13 @@ describe Station do
 
   describe ".oldest_station" do
     it "returns the date of the oldest station" do
-<<<<<<< HEAD
-      Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8),long: 2.2, lat: 3.3)
-      Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 10, 8),long: 2.2, lat: 3.3)
-=======
       Station.create(name: "Station 2", dock_count: 13, city: "Denver", installation_date: Date.new(2015, 12, 8), long: 11, lat: 22 )
       Station.create(name: "Station 1", dock_count: 15, city: "Boston", installation_date: Date.new(2015, 15, 8), long: 11, lat: 22 )
->>>>>>> edb4f896f771eedea8fe6fadefec20ab4e9f019b
 
       expect(Station.oldest_station).to eq(Date.new(2015, 10, 8))
     end
   end
-<<<<<<< HEAD
-=======
 
->>>>>>> edb4f896f771eedea8fe6fadefec20ab4e9f019b
   describe "Feature"
     describe "when a user visits '/stations'" do
       it "they see available stations" do
@@ -184,6 +152,6 @@ describe Station do
 
         expect(page).to have_content("Here is yo Station!")
       end
-    end    
+    end
   end
 end
