@@ -28,4 +28,8 @@ class Station < ActiveRecord::Base
     start_trip_stations.count
   end
 
+  def trips_ended
+    end_trip_stations.count
+  end
+
 end
