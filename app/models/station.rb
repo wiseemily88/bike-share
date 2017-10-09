@@ -25,7 +25,7 @@ class Station < ActiveRecord::Base
   end
 
   def trips_started
-
+    start_trip_stations.count
   end
 
 end
