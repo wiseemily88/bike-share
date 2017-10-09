@@ -1,4 +1,3 @@
-require 'pry'
 class BikeShareApp < Sinatra::Base
 
   get '/' do

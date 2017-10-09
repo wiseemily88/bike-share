@@ -1,4 +1,3 @@
-require 'pry'
 class Station < ActiveRecord::Base
 
   has_many :start_trip_stations , class_name: "Trip", foreign_key: "start_station_id"
@@ -52,6 +51,5 @@ class Station < ActiveRecord::Base
   def most_popular_bike_id
     start_trip_stations.group(:bike_id).order("count_all").count.keys.last
   end
-
 
 end
