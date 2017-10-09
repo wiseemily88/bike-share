@@ -44,6 +44,33 @@ class Trip < ActiveRecord::Base
     where("extract(month from start_date) = ? and extract(year from start_date) = ?", monthly, yearly).count
   end
 
+  def self.most_ridden_bike
+    group("bike_id").order("count_all DESC").count.first
+  end
+
+  def self.least_ridden_bike
+    group("bike_id").order("count_all ASC").count.first
+  end
+
+  def self.user_subscription
+    group("subscription_type").count
+  end
+
+  def self.percentage(subscription_type)
+    types = user_subscription
+    count = types[subscription_type]
+    total = types.values.sum.to_f
+
+    ((count/total)*100).round(2)
+  end
+
+  def self.highest_trip_count
+    group("start_date").order("count_all DESC").count.first
+  end
+
+  def self.lowest_trip_count
+    group("start_date").order("count_all ASC").count.first
+  end
 end
 
 
