@@ -1,7 +1,6 @@
 require 'will_paginate/view_helpers/sinatra'
 require 'will_paginate/active_record'
 require 'pry'
-class BikeShareApp < Sinatra::Base
 
 class BikeShareApp < Sinatra::Base
 include WillPaginate::Sinatra::Helpers
