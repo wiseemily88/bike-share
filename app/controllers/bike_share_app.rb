@@ -55,7 +55,8 @@ class BikeShareApp < Sinatra::Base
   end
 
   post '/trips' do
-    @trips = Trip.create(params[:trip])
+    binding.pry
+    Trip.create(params[:trip])
     redirect "/trips"
   end
 
