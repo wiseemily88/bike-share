@@ -17,7 +17,7 @@ class Trip < ActiveRecord::Base
   end
 
   def self.average_ride
-    (average("duration")/60).round(2)    
+    (average("duration")/60).round(2)
   end
 
   def self.longest_ride
@@ -29,11 +29,11 @@ class Trip < ActiveRecord::Base
   end
 
   def self.highest_starting_place
-    group("start_station").order("count_all DESC").count.keys.first.name
+    group("start_station").order("count_all DESC").count.keys.first
   end
 
   def self.highest_ending_place
-    group("end_station").order("count_all DESC").count.keys.first.name    
+    group("end_station").order("count_all DESC").count.keys.first
   end
 
   def self.monthly_rides(month)
