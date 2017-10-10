@@ -6,8 +6,8 @@ class Station < ActiveRecord::Base
   validates :dock_count,        presence: true
   validates :city,              presence: true
   validates :installation_date, presence: true
-  validates :lat,               presence: true
-  validates :long,              presence: true
+
+
 
   scope :newest, -> { where(installation_date: maximum("installation_date")) }
   scope :highest, -> { where(dock_count: maximum("dock_count")) }
@@ -17,6 +17,7 @@ class Station < ActiveRecord::Base
   def self.station_count
     count
   end
+
 
   def self.average_bikes_per_stations
     average("dock_count").floor
