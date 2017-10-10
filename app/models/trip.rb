@@ -12,10 +12,6 @@ class Trip < ActiveRecord::Base
   validates :bike_id,           presence: true
   validates :subscription_type, presence: true
 
-  def self.sort_trips_by_start_date(page)
-    sort_by("start_date").take(page*30).drop((page-1)*30)
-  end
-
   def self.average_ride
     (average("duration")/60).round(2)    
   end
