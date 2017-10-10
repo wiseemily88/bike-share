@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Feature" do
   describe "when a user visits '/trips'" do
     it "they see trips" do
-      visit "/tripss"
+      visit "/trips"
 
       within("#body-content") do
         expect(page).to have_content("Trips Taken")
