@@ -1,6 +1,6 @@
 class Station < ActiveRecord::Base
   
-  has_many :trips
+  # has_many :trips
 
   validates :name,              presence: true, uniqueness: true
   validates :dock_count,        presence: true
