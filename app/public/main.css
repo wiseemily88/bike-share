@@ -1,0 +1,22 @@
+body {
+  background-image: url("/images/sf-bay.jpg");
+  /* Photo by Changyu Hu on Unsplash */
+}
+
+.jumbotron {
+  text-align: center;
+  margin: 0px 0px;
+  padding: 20px;
+}
+
+.navbar {
+    float:none;
+    margin:0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+}

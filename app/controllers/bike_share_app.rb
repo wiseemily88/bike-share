@@ -6,7 +6,7 @@ class BikeShareApp < Sinatra::Base
   include WillPaginate::Sinatra::Helpers
 
   get '/' do
-    "hello"
+    erb :index
   end
 
   get '/stations' do
