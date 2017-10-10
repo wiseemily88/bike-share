@@ -71,20 +71,5 @@ class Trip < ActiveRecord::Base
   def self.lowest_trip_count
     group("start_date").order("count_all ASC").count.first
   end
+
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
