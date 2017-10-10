@@ -20,6 +20,10 @@ class Station < ActiveRecord::Base
     count
   end
 
+  def station_name_id_counter
+    maximum("station_name_id") + 1
+  end
+
   def self.average_bikes_per_stations
     average("dock_count").floor
   end
