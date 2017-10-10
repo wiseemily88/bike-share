@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010011652) do
+ActiveRecord::Schema.define(version: 20171010173934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "stations", primary_key: "station_name_id", id: :bigint, default: -> { "nextval('stations_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "stations", force: :cascade do |t|
     t.text "name"
     t.integer "dock_count"
     t.text "city"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171010011652) do
     t.float "lat"
   end
 
-  create_table "trips", primary_key: "trip_name_id", id: :bigint, default: -> { "nextval('trips_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "trips", force: :cascade do |t|
     t.bigint "duration"
     t.datetime "start_date"
     t.string "start_station_name"

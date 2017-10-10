@@ -1,14 +1,14 @@
 class Station < ActiveRecord::Base
 
-  has_many :start_trip_stations , class_name: "Trip", foreign_key: "start_station_id", primary_key: "station_name_id"
-  has_many :end_trip_stations , class_name: "Trip", foreign_key: "end_station_id", primary_key: "station_name_id"
+  has_many :start_trip_stations , class_name: "Trip", foreign_key: "start_station_id"
+  has_many :end_trip_stations , class_name: "Trip", foreign_key: "end_station_id"
 
 
   validates :name,              presence: true, uniqueness: true
   validates :dock_count,        presence: true
   validates :city,              presence: true
   validates :installation_date, presence: true
-  validates :station_name_id,   presence: true, uniqueness: true
+
 
 
   scope :newest, -> { where(installation_date: maximum("installation_date")) }
@@ -20,9 +20,6 @@ class Station < ActiveRecord::Base
     count
   end
 
-  def self.increment_id
-    maximum("station_name_id") + 1
-  end
 
   def self.average_bikes_per_stations
     average("dock_count").floor
