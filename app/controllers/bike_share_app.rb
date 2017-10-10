@@ -74,7 +74,6 @@ include WillPaginate::Sinatra::Helpers
   end
 
   put '/trips/:id' do
-
     @trips = Trip.find(params[:id])
     @trips.update(params[:trip])
     redirect "/trips/#{params[:id]}"
@@ -115,7 +114,8 @@ include WillPaginate::Sinatra::Helpers
   end
 
   put '/conditions/:id' do
-    @condition = Condition.update(params[:condition])
+    @conditions = Condition.find(params[:id])
+    @conditions.update(params[:condition])
     redirect "/conditions/#{params[:id]}"
   end
 
