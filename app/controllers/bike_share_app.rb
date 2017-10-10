@@ -1,10 +1,10 @@
 require 'will_paginate/view_helpers/sinatra'
 require 'will_paginate/active_record'
 require 'pry'
-class BikeShareApp < Sinatra::Base
 
 class BikeShareApp < Sinatra::Base
-include WillPaginate::Sinatra::Helpers
+  include WillPaginate::Sinatra::Helpers
+
   get '/' do
     "hello"
   end
@@ -20,7 +20,6 @@ include WillPaginate::Sinatra::Helpers
 
   post '/stations' do
     Station.create(params[:station])
-
     redirect "/stations"
   end
 
@@ -74,7 +73,6 @@ include WillPaginate::Sinatra::Helpers
   end
 
   put '/trips/:id' do
-
     @trips = Trip.find(params[:id])
     @trips.update(params[:trip])
     redirect "/trips/#{params[:id]}"
