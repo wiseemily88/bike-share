@@ -9,27 +9,27 @@
     <fieldset>
       <legend>Edit Station</legend>
       <div class="control-group">
-        <label class="control-label" name ="station[name]" value="<%= @stations.name %>"/>Station Name</label>
+        <label class="control-label" />Station Name</label>
         <div class="controls">
-          <input type="text" placeholder="station">
+          <input type="text" name ="station[name]" value="<%= @stations.name %>">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="station[dock_count]" value="<%= @stations.dock_count %>"/>Number of Docks</label>
+        <label class="control-label"  />Number of Docks</label>
         <div class="controls">
-          <input type="integer" placeholder="docks">
+          <input type="integer" name ="station[dock_count]" value="<%= @stations.dock_count %>">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="station[city]" value="<%= @stations.city %>"/>City</label>
+        <label class="control-label" />City</label>
         <div class="controls">
-          <input type="text" placeholder="city">
+          <input type="text" name ="station[city]" value="<%= @stations.city %>">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="station[installation_date]" value="<%= @stations.installation_date %>"/>Date Installed</label>
+        <label class="control-label" />Date Installed</label>
         <div class="controls">
-          <input type="date" placeholder="date">
+          <input type="date" name ="station[installation_date]"  value="<%= @stations.installation_date %>">
         </div>
       </div>
       <br>
