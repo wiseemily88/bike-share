@@ -1,6 +1,10 @@
+require 'will_paginate/view_helpers/sinatra'
+require 'will_paginate/active_record'
 require 'pry'
 class BikeShareApp < Sinatra::Base
 
+class BikeShareApp < Sinatra::Base
+include WillPaginate::Sinatra::Helpers
   get '/' do
     "hello"
   end
@@ -46,7 +50,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/trips' do
-    @trips = Trip.all
+    @trips = Trip.paginate(page: params[:page], per_page: 30)
     erb :'/trip/index'
   end
 
@@ -87,7 +91,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/conditions' do
-    @conditions = Condition.all
+    @conditions = Condition.paginate(page: params[:page], per_page: 30)
     erb :'/condition/index'
   end
 

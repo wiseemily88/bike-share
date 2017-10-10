@@ -15,6 +15,20 @@ ActiveRecord::Schema.define(version: 20171010212538) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "conditions", force: :cascade do |t|
+    t.date "date"
+    t.integer "max_temperature_f"
+    t.integer "min_temperature_f"
+    t.integer "mean_temperature_f"
+    t.integer "mean_humidity"
+    t.integer "mean_visibility_miles"
+    t.integer "mean_wind_speed_mph"
+    t.float "precipitation_inches"
+    t.integer "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "stations", force: :cascade do |t|
     t.text "name"
     t.integer "dock_count"
