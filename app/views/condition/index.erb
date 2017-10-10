@@ -12,18 +12,18 @@
     <div class="row">
   	  <div class="col-sm-12 text-center" id="body-content">
         <h1 class="display-4">Weather Conditions</h1>
-        <a  href="/stations/new" class="btn btn-primary" id="create-btn">Add Weather Conditions</a>
+        <a  href="/conditions/new" class="btn btn-primary" id="create-btn">Add Weather Conditions</a>
         <div class="row">
           <% @conditions.each do |condition| %>
             <div class="col-sm-6 col-md-4">
               <h4>Conditions for <%= condition.date.strftime(format='%m/%d/%Y') %></h4>
               <div class="col-sm-12">
-                <form action="/stations/<%=station.id %>" method="POST" >
+                <form action="/conditions/<%=condition.id %>" method="POST" >
                   <input type="hidden" name="_method" value="DELETE">
                   <div class="btn-group">
                     <input type="submit" class="btn btn-danger btn-sm" value="Delete Weather Condition">
-                    <a  href="/stations/<%=station.id%>/edit" class="btn btn-info btn-sm">Edit</a>
-                    <a  href="/stations/<%=station.id%>" class="btn btn-info btn-sm">Show</a>
+                    <a  href="/conditions/<%=station.id%>/edit" class="btn btn-info btn-sm">Edit</a>
+                    <a  href="/conditions/<%=station.id%>" class="btn btn-info btn-sm">Show</a>
                   </div>
                 </form>
               </div>
