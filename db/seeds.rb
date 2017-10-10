@@ -20,6 +20,15 @@ class Seed
     end
   end
 
+
+  def self.seed_trips
+    CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
+      row[:start_date] = DateTime.strptime(row[:start_date], "%m/%d/%Y %H:%M")
+      row[:end_date] = DateTime.strptime(row[:end_date], "%m/%d/%Y %H:%M")
+      Trip.create!(row.to_hash)
+    end
+  end
+  
   def self.seed_conditions
     CSV.foreach("./db/csv/weather.csv", OPTIONS) do |row|
       next if row[:zip_code] != "94107"
@@ -40,14 +49,6 @@ class Seed
       row.delete(:events)
       row.delete(:wind_dir_degrees)
       condition = Condition.create!(row.to_hash)
-    end
-  end
-
-  def self.seed_trips
-    CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
-      row[:start_date] = DateTime.strptime(row[:start_date], "%m/%d/%Y %H:%M")
-      row[:end_date] = DateTime.strptime(row[:end_date], "%m/%d/%Y %H:%M")
-      Trip.create!(row.to_hash)
     end
   end
 end

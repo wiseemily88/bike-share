@@ -86,7 +86,7 @@ include WillPaginate::Sinatra::Helpers
   end
 
   get '/conditions' do
-    @conditions = Condition.paginate(:page => params[:page], :per_page => 30)
+    @conditions = Condition.paginate(page: params[:page], per_page: 30)
     erb :'/condition/index'
   end
 
