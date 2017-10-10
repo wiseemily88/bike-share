@@ -6,6 +6,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec'
 require 'capybara/dsl'
 require 'date'
+require 'pry'
 
 
 

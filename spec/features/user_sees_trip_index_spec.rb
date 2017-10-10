@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Feature" do
   describe "when a user visits '/trips'" do
     it "they see trips" do
-      visit "/tripss"
+      visit "/trips"
 
       within("#body-content") do
         expect(page).to have_content("Trips Taken")
@@ -13,7 +13,7 @@ describe "Feature" do
 
   describe "when a user clicks on edit" do
     it "they will see the edit page" do
-      Trip.create(
+      Trip.create!(
         duration: 63,
         start_date: DateTime.new(2014,8,29,14,13),
         start_station_name: "South Van Ness at Market",
@@ -32,8 +32,8 @@ describe "Feature" do
   end
 
   describe "when a user clicks on create a new trip" do
-    it "they will see the new station page" do
-      Trip.create(
+    it "they will see the new trip page" do
+      Trip.create!(
         duration: 63,
         start_date: DateTime.new(2014,8,29,14,13),
         start_station_name: "South Van Ness at Market",
@@ -53,7 +53,7 @@ describe "Feature" do
 
   describe "when a user clicks on create a show" do
     it "they will see the show page" do
-      Trip.create(
+      Trip.create!(
         duration: 63,
         start_date: DateTime.new(2014,8,29,14,13),
         start_station_name: "South Van Ness at Market",
@@ -67,7 +67,7 @@ describe "Feature" do
       visit "/trips"
       click_on "Show"
 
-      expect(page).to have_content(Trip)
+      expect(page).to have_content("Trip")
     end
   end
 end
