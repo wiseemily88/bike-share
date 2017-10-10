@@ -4,31 +4,39 @@
 </head>
 
 <div class="transbox">
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="/stations" method="post">
     <fieldset>
+      <legend>New Id</legend>
+      <div class="control-group">
+        <label class="control-label" >Station_id_Name</label>
+        <div class="controls">
+          <input type="text" name ="station[station_name_id]" placeholder="90">
+        </div>
+      </div>
+
       <legend>New Station</legend>
       <div class="control-group">
-        <label class="control-label" name ="station[name]">Station Name</label>
+        <label class="control-label" >Station Name</label>
         <div class="controls">
-          <input type="text" placeholder="station">
+          <input type="text" name ="station[name]" placeholder="station">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="station[dock_count]">Number of Docks</label>
+        <label class="control-label" >Number of Docks</label>
         <div class="controls">
-          <input type="integer" placeholder="docks">
+          <input type="integer" name ="station[dock_count]" placeholder="docks">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="station[city]">City</label>
+        <label class="control-label" >City</label>
         <div class="controls">
-          <input type="text" placeholder="city">
+          <input type="text" name ="station[city]" placeholder="city">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="station[installation_date]">Date Installed</label>
+        <label class="control-label" >Date Installed</label>
         <div class="controls">
-          <input type="date" placeholder="date">
+          <input type="date" name ="station[installation_date]" placeholder="date">
         </div>
       </div>
       <br>
