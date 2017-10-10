@@ -16,6 +16,7 @@ div.transbox {
   border: 1px solid black;
   border-radius: 2%;
   opacity: 0.85;
+  width: 500px;
 }
 
 .form-horizontal {
