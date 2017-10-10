@@ -1,5 +1,5 @@
 class Condition < ActiveRecord::Base
-  has_many :trip_condition , class_name: "Trips", foreign_key: "start_date"
+  has_many :trip_conditions , class_name: "Trips", foreign_key: "start_date"
 
   validates :date,                presence: true, uniqueness: true
   validates :max_temperature_f,     presence: true
