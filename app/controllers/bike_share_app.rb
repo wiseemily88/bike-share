@@ -53,6 +53,7 @@ class BikeShareApp < Sinatra::Base
 
   get '/trips/new' do
     erb :'/trip/new'
+
   end
 
   post '/trips' do
