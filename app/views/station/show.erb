@@ -17,7 +17,7 @@
             <h2> <%= @station.name %> </h2>
             <h5> City: <%= @station.city %> </h5>
             <h5> Dock Count: <%= @station.dock_count %> </h5>
-            <h5> Install Date: <%= @station.installation_date %> </h5>
+            <h5> Install Date: <%= @station.installation_date.strftime(format='%m/%d/%Y') %> </h5>
             <h5> Number of Trips Started: <%= @station.trips_started%> </h5>
             <h5> Number of Trips Ended: <%= @station.trips_ended%> </h5>
             <h5> Most Frequent Destination: <%= @station.highest_end_station_count%> </h5>

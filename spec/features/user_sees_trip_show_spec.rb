@@ -26,7 +26,7 @@ RSpec.describe "When a user visits '/trips/:id'" do
   end
 
   it "they see start date" do
-    expect(page).to have_content("Start Date: #{trip.start_date}")
+    expect(page).to have_content("Start Date: 08/28/2013")
   end
 
   it "they see start station name" do
@@ -34,7 +34,7 @@ RSpec.describe "When a user visits '/trips/:id'" do
   end
 
   it "they see end date" do
-    expect(page).to have_content("End Date: #{trip.end_date}")
+    expect(page).to have_content("End Date: 08/29/2013")
   end
 
   it "they see end station name" do

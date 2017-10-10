@@ -16,7 +16,7 @@
         <div class="row">
           <% @trips.each do |trip| %>
             <div class="col-sm-6 col-md-4">
-              <h4> <%= trip.start_date %> </h4>
+              <h4> <%= trip.start_date.strftime(format='%m/%d/%Y') %> </h4>
               <div class="col-sm-12">
                 <form action="/trips/<%=trip.id %>" method="POST" >
                   <input type="hidden" name="_method" value="DELETE">
