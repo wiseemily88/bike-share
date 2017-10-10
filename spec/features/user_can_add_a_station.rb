@@ -27,3 +27,4 @@ RSpec.describe "When a user adds a new station '/stations/new" do
     expect(page).to have_content "Welcome back, #{user.first_name}!"
     expect(page).to have_content("Miami Bike")
   end
+end
