@@ -9,7 +9,6 @@ class Seed
   def self.start
     seed_stations
     seed_trips
-    seed_conditions
   end
 
   def self.seed_stations
@@ -25,16 +24,6 @@ class Seed
       row[:end_date] = DateTime.strptime(row[:end_date], "%m/%d/%Y %H:%M")
       Trip.create!(row.to_hash)
     end
-  end
-
-  def self.seed_conditions
-    conditions = []
-    CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
-      next if row[:zip_code] != "94107"
-      row[:date] = Date.strptime(row[:date], "%m/%d/%Y")
-      conditions << Condition.new(row.to_hash)
-    end
-    conditions.each_slice(1000) { |slice| import(slice) }
   end
 end
 
