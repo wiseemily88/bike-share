@@ -9,7 +9,6 @@ class Seed
   def self.start
     seed_stations
     seed_trips
-    # seed_conditions
   end
 
   def self.seed_stations

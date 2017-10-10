@@ -1,4 +1,5 @@
 require "spec_helper"
+
 RSpec.describe "when a user visits '/station-dashboard'" do
   it "they can see dashboard metrics" do
 

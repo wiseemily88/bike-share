@@ -1,6 +1,6 @@
 <head>
   <link rel="stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/station/new.css">
+  <link rel="stylesheet" type="text/css" href="/trip/new.css">
 </head>
 
 <div class="transbox">
@@ -8,51 +8,62 @@
     <fieldset>
       <legend>New Trip</legend>
       <div class="control-group">
-        <label class="control-label" name ="trip[duration]">Trip Duration</label>
+        <label class="control-label">Trip Duration</label>
         <div class="controls">
-          <input type="text" placeholder="trip duration">
+          <input type="text" name ="trip[duration]" placeholder="trip duration">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="trip[start_date]">Start Date</label>
+        <label class="control-label">Start Date</label>
         <div class="controls">
-          <input type="date" placeholder="start date">
+          <input type="date" name ="trip[start_date]" placeholder="start date">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="trip[start_station]">Start Station</label>
+        <label class="control-label">Start Station Name</label>
         <div class="controls">
-          <input type="text" placeholder="start station">
+          <input type="text" name ="trip[start_station_name]" placeholder="start station">
+        </div>
+      </div>
+      <label class="control-label">Start Station ID</label>
+      <div class="controls">
+        <input type="text" name ="trip[start_station_id]" placeholder="start station">
+      </div>
+    </div>
+      <div class="control-group">
+        <label class="control-label">End Date</label>
+        <div class="controls">
+          <input type="date" name ="trip[end_date]" placeholder="end date">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="trip[end_date]">End Date</label>
+        <label class="control-label">End Station Name</label>
         <div class="controls">
-          <input type="date" placeholder="end date">
+          <input type="text" name ="trip[end_station_name]" placeholder="end station">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="trip[end_station]">End Station</label>
+        <label class="control-label">End Station ID</label>
         <div class="controls">
-          <input type="text" placeholder="end station">
+          <input type="text" name ="trip[end_station_id]" placeholder="end station">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="trip[bike_id]">Bike ID</label>
+        <label class="control-label">Bike ID</label>
         <div class="controls">
-          <input type="text" placeholder="bike id">
+          <input type="text" name ="trip[bike_id]" placeholder="bike id">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="trip[subscription_type]">Subscription Type</label>
+        <label class="control-label">Subscription Type</label>
         <div class="controls">
-          <input type="text" placeholder="subscription type">
+          <input type="text" name ="trip[subscription_type]" placeholder="subscription type">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" name ="trip[zip_code]">Zip Code</label>
+        <label class="control-label">Zip Code</label>
         <div class="controls">
-          <input type="text" placeholder="zip code">
+          <input type="text" name ="trip[zip_code]" placeholder="zip code">
         </div>
       </div>
       <br>
