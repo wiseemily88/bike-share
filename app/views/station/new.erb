@@ -10,7 +10,7 @@
       <div class="control-group">
         <label class="control-label" >Station_id_Name</label>
         <div class="controls">
-          <input type="text" name ="station[station_name_id]" value ="<%= @stations.station_name_id_counter%>">
+          <input type="hidden" name ="station[station_name_id]" value="<% Station.increment_id%>" >
 
         </div>
       </div>

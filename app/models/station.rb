@@ -20,7 +20,7 @@ class Station < ActiveRecord::Base
     count
   end
 
-  def station_name_id_counter
+  def self.increment_id
     maximum("station_name_id") + 1
   end
 
