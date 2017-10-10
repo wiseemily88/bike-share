@@ -3,7 +3,8 @@ require 'will_paginate/active_record'
 require 'pry'
 
 class BikeShareApp < Sinatra::Base
-include WillPaginate::Sinatra::Helpers
+  include WillPaginate::Sinatra::Helpers
+
   get '/' do
     "hello"
   end
@@ -19,7 +20,6 @@ include WillPaginate::Sinatra::Helpers
 
   post '/stations' do
     Station.create(params[:station])
-
     redirect "/stations"
   end
 
