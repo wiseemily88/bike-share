@@ -1,0 +1,60 @@
+<head>
+  <link rel="stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/station/new.css">
+</head>
+
+<div class="transbox">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>New Weather Conditions Report</legend>
+      <div class="control-group">
+        <label class="control-label" name ="weather[date]">Date</label>
+        <div class="controls">
+          <input type="date" placeholder="date">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" name ="weather[max_temperature]">Temperature High</label>
+        <div class="controls">
+          <input type="integer" placeholder="high">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" name ="weather[min_temperature]">Temperature Low</label>
+        <div class="controls">
+          <input type="integer" placeholder="low">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" name ="weather[mean_humidity]">Mean Humidity</label>
+        <div class="controls">
+          <input type="integer" placeholder="humidity">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" name ="weather[mean_visibility]">Mean Visibility (miles)</label>
+        <div class="controls">
+          <input type="integer" placeholder="visibility (miles)">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" name ="weather[mean_wind_speed]">Mean Wind Speed (mph)</label>
+        <div class="controls">
+          <input type="integer" placeholder="wind speed (mph)">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" name ="weather[precipitation]">Precipitation (inches)</label>
+        <div class="controls">
+          <input type="integer" placeholder="precipitation (inches)">
+        </div>
+      </div>
+      <br>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn btn-info">Add New Trip</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
