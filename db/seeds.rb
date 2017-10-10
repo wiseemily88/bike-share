@@ -20,8 +20,8 @@ class Seed
 
   def self.seed_trips
     CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
-      row[:start_date] = DateTime.strptime(row[:start_date], "%m/%d/%Y %H:%M")
-      row[:end_date] = DateTime.strptime(row[:end_date], "%m/%d/%Y %H:%M")
+      row[:start_date] = Date.strptime(row[:start_date], "%m/%d/%Y")
+      row[:end_date] = Date.strptime(row[:end_date], "%m/%d/%Y")
       Trip.create!(row.to_hash)
     end
   end
