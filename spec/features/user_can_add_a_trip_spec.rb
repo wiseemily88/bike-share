@@ -2,18 +2,6 @@ require "spec_helper"
 
 RSpec.describe "When a user adds a new trip '/trips/new" do
   it "they can add a trip" do
-    # Trip.create!(
-    #   duration: 63,
-    #   start_date: DateTime.new(2013,8,28,14,14),
-    #   start_station_name: "Station 1",
-    #   start_station_id: 1,
-    #   end_date: DateTime.new(2013,8,29,14,14),
-    #   end_station_name: "Station 2",
-    #   end_station_id: 2,
-    #   bike_id: 520,
-    #   subscription_type: "Subscriber",
-    #   zip_code: 94127
-    # )
     visit "/trips/new"
     fill_in 'trip[duration]',           with: 54
     fill_in 'trip[start_date]',         with: DateTime.new(2013,8,28,14,14)
