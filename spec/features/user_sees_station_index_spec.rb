@@ -23,7 +23,7 @@ describe "Feature" do
     end
   end
 
-  describe "when a user clicks on create a new station" do
+  describe "when a user clicks on new station" do
     it "they will see the new station page" do
       Station.create(name: "Luis and 3/4", lat: 37.329732, long: -121.901782,
                      dock_count: 1, city: "Denver",
@@ -35,7 +35,7 @@ describe "Feature" do
     end
   end
 
-  describe "when a user clicks on create a show" do
+  describe "when a user clicks on show" do
     it "they will see the show page" do
       Station.create(name: "Luis and 3/4", lat: 37.329732, long: -121.901782,
                      dock_count: 1, city: "Denver",

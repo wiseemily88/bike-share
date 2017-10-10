@@ -16,7 +16,7 @@
         <div class="row">
           <% @conditions.each do |condition| %>
             <div class="col-sm-6 col-md-4">
-              <h4>Conditions for <%= condition.date %></h4>
+              <h4>Conditions for <%= condition.date.strftime(format='%m/%d/%Y') %></h4>
               <div class="col-sm-12">
                 <form action="/stations/<%=station.id %>" method="POST" >
                   <input type="hidden" name="_method" value="DELETE">

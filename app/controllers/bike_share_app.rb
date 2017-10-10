@@ -1,5 +1,7 @@
 require 'will_paginate/view_helpers/sinatra'
 require 'will_paginate/active_record'
+require 'pry'
+class BikeShareApp < Sinatra::Base
 
 class BikeShareApp < Sinatra::Base
 include WillPaginate::Sinatra::Helpers
@@ -17,8 +19,9 @@ include WillPaginate::Sinatra::Helpers
   end
 
   post '/stations' do
-    @stations = Station.create(params[:station])
-    redirect "/stations/#{@stations.id}"
+    Station.create(params[:station])
+
+    redirect "/stations"
   end
 
   get '/stations/:id' do
@@ -32,7 +35,7 @@ include WillPaginate::Sinatra::Helpers
   end
 
   put '/stations/:id' do
-    @station = Station.update(params[:station])
+    @stations = Station.update(params[:id], params[:station])
     redirect "/stations/#{params[:id]}"
   end
 
@@ -56,8 +59,8 @@ include WillPaginate::Sinatra::Helpers
   end
 
   post '/trips' do
-    @trips = Trip.create(params[:trip])
-    redirect "/trips/#{@trips.id}"
+    Trip.create(params[:trip])
+    redirect "/trips"
   end
 
   get '/trips/:id' do
@@ -71,7 +74,9 @@ include WillPaginate::Sinatra::Helpers
   end
 
   put '/trips/:id' do
-    @trip = Trip.update(params[:trip])
+
+    @trips = Trip.find(params[:id])
+    @trips.update(params[:trip])
     redirect "/trips/#{params[:id]}"
   end
 
@@ -95,8 +100,8 @@ include WillPaginate::Sinatra::Helpers
   end
 
   post '/conditions' do
-    @conditions = Condition.create(params[:trip])
-    redirect "/conditions"
+    @conditions = Condition.create(params[:condition])
+    redirect "/conditions/#{@conditions.id}"
   end
 
   get '/conditions/:id' do
@@ -110,7 +115,7 @@ include WillPaginate::Sinatra::Helpers
   end
 
   put '/conditions/:id' do
-    @conditions = Condition.update(params[:trip])
+    @condition = Condition.update(params[:condition])
     redirect "/conditions/#{params[:id]}"
   end
 
@@ -123,4 +128,5 @@ include WillPaginate::Sinatra::Helpers
     @conditions = Condition.all
     erb :'/condition/dashboard'
   end
+
 end
