@@ -2,7 +2,7 @@ require 'pry'
 class BikeShareApp < Sinatra::Base
 
   get '/' do
-    "hello"
+    erb :index
   end
 
   get '/stations' do
