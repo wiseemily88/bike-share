@@ -1,3 +1,4 @@
+require 'pry'
 class BikeShareApp < Sinatra::Base
 
   get '/' do
@@ -14,6 +15,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   post '/stations' do
+
     @stations = Station.create(params[:station])
     redirect "/stations/#{@stations.id}"
   end
@@ -31,7 +33,8 @@ class BikeShareApp < Sinatra::Base
   end
 
   put '/stations/:id' do
-    @station = Station.update(params[:station])
+    @stations = Station.update(params[:station])
+
     redirect "/stations/#{params[:id]}"
   end
 
