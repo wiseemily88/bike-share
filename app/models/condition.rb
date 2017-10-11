@@ -1,5 +1,4 @@
 class Condition < ActiveRecord::Base
-
   self.primary_key = "date"
 
   has_many :trips , class_name: "Trip", primary_key: "date", foreign_key: "start_date"
@@ -14,9 +13,16 @@ class Condition < ActiveRecord::Base
   validates :precipitation_inches,  presence: true
   validates :zip_code,              presence: true
 
-  def self.mean_trips_for_wind_speeds
-    require 'pry'; binding.pry
-    group(where("mean_wind_speed_mph < 5").having('start_date')
+  def self.trips_with_wind_speed(min, max)
+    joins(:trips)
+    .where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max)
+    .count
   end
 
+  def self.average_trips_with_wind_speed(min, max)
+    trips = trips_with_wind_speed(min, max)
+    total_days = where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max).count
+    trips/total_days
+    require 'pry'; binding.pry
+  end
 end

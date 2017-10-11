@@ -121,7 +121,7 @@
       <div class="col-sm-4">
         <div class="well">
           <h4>Wind Speed 0 - 4 MPH </h4>
-            <p> Average number of rides: <%= @conditions.mean_trips_for_wind_speeds %> </p>
+            <p> Average number of rides: <%= @conditions.average_trips_with_wind_speed(0, 4) %></p>
             <p> Highest number of rides: Change me</p>
             <p> Lowest number of rides: Change me</p>
         </div>
