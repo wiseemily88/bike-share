@@ -25,7 +25,7 @@
     <div class="col-sm-3">
       <div class="well">
         <h4>High Temperature 50 - 60 F</h4>
-          <p> Average number of rides: Change me</p>
+          <p> Average number of rides: <%= (@conditions.trip_array(50..60).sum) / (@conditions.trip_array(50..60).count) %></p>
           <p> Highest number of rides: Change me</p>
           <p> Lowest number of rides: Change me</p>
       </div>
