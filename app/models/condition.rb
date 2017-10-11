@@ -1,3 +1,4 @@
+require 'pry'
 class Condition < ActiveRecord::Base
 
   self.primary_key = "date"
@@ -15,25 +16,25 @@ class Condition < ActiveRecord::Base
   validates :zip_code,            presence: true
 
   def self.trip_array(range)
-    to_a.group_by do |condition|
+    all.group_by do |condition|
       condition.max_temperature_f
     end.select do |k, v|
       range.include?(k)
     end.values.flatten.map do |condition|
-      condition.trips
-    end
+      condition.trips.count
+    end.flatten
   end
 
-  def self.average_number_of_rides(trip_array)
-    (trip_array.sum) / (trip_array.count)
-  end
+  # def self.average_number_of_rides(trip_array)
+  #   (trip_array.sum) / (trip_array.count)
+  # end
 
   def self.highest_number_of_rides
-    
+
   end
 
   def self.lowest_number_of_rides
-    
+
   end
 
 
