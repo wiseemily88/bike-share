@@ -16,7 +16,7 @@ class Condition < ActiveRecord::Base
 
   def self.mean_trips_for_wind_speeds
     require 'pry'; binding.pry
-    count(:all, group: "start_date, mean_wind_speed_mph")
+    group(where("mean_wind_speed_mph < 5").having('start_date')
   end
 
 end
