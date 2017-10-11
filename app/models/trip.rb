@@ -1,9 +1,7 @@
 class Trip < ActiveRecord::Base
   belongs_to :start_station,  class_name: "Station"
   belongs_to :end_station,  class_name: "Station"
-  belongs_to :condition_date,  class_name: "Condition"
-
-
+  belongs_to :condition,  class_name: "Condition", primary_key: "date"
 
   validates :duration,          presence: true
   validates :start_date,        presence: true
