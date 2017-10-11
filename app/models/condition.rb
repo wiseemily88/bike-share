@@ -14,17 +14,33 @@ class Condition < ActiveRecord::Base
   validates :zip_code,              presence: true
 
   def self.trips_with_wind_speed(min, max)
-    joins(:trips)
+    testing = joins(:trips)
     .where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max)
-    .count
   end
 
   def self.average_trips_with_wind_speed(min, max)
-    trips = trips_with_wind_speed(min, max)
+    trips = trips_with_wind_speed(min, max).count
     total_days = where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max).count
     (trips/total_days).round(2)
   end
 
+  def self.max_trips_with_wind_speed(min, max)
+    trips = trips_with_wind_speed(min, max)
+    trips.group('start_date')
+    .order('count_all DESC')
+    .count
+    .values
+    .first
+  end
+
+  def self.min_trips_with_wind_speed(min, max)
+    trips = trips_with_wind_speed(min, max)
+    trips.group('start_date')
+    .order('count_all DESC')
+    .count
+    .values
+    .last
+  end
 
 
 end
