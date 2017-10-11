@@ -14,21 +14,21 @@
         <h1 class="display-4">Whats yo Condition! </h1>
         <div class="row">
           <div class="col-md-12">
-            <h2> <%= @condition.date %> </h2>
-            <h5> Max Temp F: <%= @condition.max_temperature_f %> </h5>
-            <h5> Min Temp F: <%= @condition.min_temperature_f %> </h5>
-            <h5> Mean Temp F: <%= @condition.mean_temperature_f %> </h5>
-            <h5> Mean Humidity: <%= @condition.mean_humidity %> </h5>
-            <h5> Mean Visibility Miles: <%= @condition.mean_visibility_miles %> </h5>
-            <h5> Mean Wind Speed MPH: <%= @condition.mean_wind_speed_mph %> </h5>
-            <h5> Precipitation Inch: <%= @condition.precipitation_inches %> </h5>
+            <h2> <%= @conditions.date %> </h2>
+            <h5> Max Temp F: <%= @conditions.max_temperature_f %> </h5>
+            <h5> Min Temp F: <%= @conditions.min_temperature_f %> </h5>
+            <h5> Mean Temp F: <%= @conditions.mean_temperature_f %> </h5>
+            <h5> Mean Humidity: <%= @conditions.mean_humidity %> </h5>
+            <h5> Mean Visibility Miles: <%= @conditions.mean_visibility_miles %> </h5>
+            <h5> Mean Wind Speed MPH: <%= @conditions.mean_wind_speed_mph %> </h5>
+            <h5> Precipitation Inch: <%= @conditions.precipitation_inches %> </h5>
 
             <div class="col-sm-12">
-              <form action="/conditions/<%=@condition.id %>" method="POST" >
+              <form action="/conditions/<%=@conditions.id %>" method="POST" >
                 <input type="hidden" name="_method" value="DELETE">
                 <div class="btn-group">
                   <input type="submit" class="btn btn-danger btn-sm" value="Delete Condition">
-                  <a  href="/conditions/<%=@condition.id%>/edit" class="btn btn-info btn-sm">Edit</a>
+                  <a  href="/conditions/<%=@conditions.id%>/edit" class="btn btn-info btn-sm">Edit</a>
                 </div>
               </form>
             </div>
