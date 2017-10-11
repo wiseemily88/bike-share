@@ -1,6 +1,7 @@
 require 'csv'
 require './app/models/station'
 require './app/models/trip'
+require './app/models/condition'
 
 class Seed
 
@@ -8,8 +9,8 @@ class Seed
 
   def self.start
     seed_stations
-    seed_trips
     seed_conditions
+    seed_trips
   end
 
   def self.seed_stations
@@ -19,24 +20,36 @@ class Seed
     end
   end
 
+
   def self.seed_trips
-    trips = []
     CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
       row[:start_date] = DateTime.strptime(row[:start_date], "%m/%d/%Y %H:%M")
       row[:end_date] = DateTime.strptime(row[:end_date], "%m/%d/%Y %H:%M")
-      trips << Trip.new(row.to_hash)
+      Trip.create!(row.to_hash)
     end
-    trips.each_slice(1000) { |slice| import(slice) }
   end
-
+  
   def self.seed_conditions
-    conditions = []
-    CSV.foreach("./db/csv/trip.csv", OPTIONS) do |row|
+    CSV.foreach("./db/csv/weather.csv", OPTIONS) do |row|
       next if row[:zip_code] != "94107"
       row[:date] = Date.strptime(row[:date], "%m/%d/%Y")
-      conditions << Condition.new(row.to_hash)
+      row.delete(:max_dew_point_f)
+      row.delete(:mean_dew_point_f)
+      row.delete(:min_dew_point_f)
+      row.delete(:max_humidity)
+      row.delete(:min_humidity)
+      row.delete(:max_sea_level_pressure_inches)
+      row.delete(:mean_sea_level_pressure_inches)
+      row.delete(:min_sea_level_pressure_inches)
+      row.delete(:max_visibility_miles)
+      row.delete(:min_visibility_miles)
+      row.delete(:max_wind_speed_mph)
+      row.delete(:max_gust_speed_mph)
+      row.delete(:cloud_cover)
+      row.delete(:events)
+      row.delete(:wind_dir_degrees)
+      condition = Condition.create!(row.to_hash)
     end
-    conditions.each_slice(1000) { |slice| import(slice) }
   end
 end
 

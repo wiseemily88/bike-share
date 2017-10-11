@@ -5,8 +5,8 @@ gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'bootstrap', '~> 4.0.0.alpha6'
-gem 'activerecord-import', '~> 0.15.0'
 gem 'pry'
+gem 'will_paginate', '~>3.1.0'
 
 group :development, :test do
   gem 'shotgun'

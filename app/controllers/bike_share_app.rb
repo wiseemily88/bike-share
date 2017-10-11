@@ -1,8 +1,12 @@
+require 'will_paginate/view_helpers/sinatra'
+require 'will_paginate/active_record'
 require 'pry'
+
 class BikeShareApp < Sinatra::Base
+  include WillPaginate::Sinatra::Helpers
 
   get '/' do
-    "hello"
+    erb :index
   end
 
   get '/stations' do
@@ -16,7 +20,6 @@ class BikeShareApp < Sinatra::Base
 
   post '/stations' do
     Station.create(params[:station])
-    
     redirect "/stations"
   end
 
@@ -31,7 +34,8 @@ class BikeShareApp < Sinatra::Base
   end
 
   put '/stations/:id' do
-    @stations = Station.update(params[:station])
+    @stations = Station.update(params[:id], params[:station])
+
     redirect "/stations/#{params[:id]}"
   end
 
@@ -46,7 +50,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/trips' do
-    @trips = Trip.all
+    @trips = Trip.paginate(page: params[:page], per_page: 30)
     erb :'/trip/index'
   end
 
@@ -56,8 +60,8 @@ class BikeShareApp < Sinatra::Base
   end
 
   post '/trips' do
-    @trips = Trip.create(params[:trip])
-    redirect "/trips/#{@trips.id}"
+    Trip.create(params[:trip])
+    redirect "/trips"
   end
 
   get '/trips/:id' do
@@ -71,7 +75,8 @@ class BikeShareApp < Sinatra::Base
   end
 
   put '/trips/:id' do
-    @trip = Trip.update(params[:trip])
+    @trips = Trip.find(params[:id])
+    @trips.update(params[:trip])
     redirect "/trips/#{params[:id]}"
   end
 
@@ -86,7 +91,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/conditions' do
-    @conditions = Condition.all
+    @conditions = Condition.paginate(page: params[:page], per_page: 30)
     erb :'/condition/index'
   end
 

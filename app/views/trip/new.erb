@@ -4,7 +4,7 @@
 </head>
 
 <div class="transbox">
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="/trips" method="post">
     <fieldset>
       <legend>New Trip</legend>
       <div class="control-group">
@@ -20,10 +20,14 @@
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label">Start Station</label>
+        <label class="control-label">Start Station Name</label>
         <div class="controls">
-          <input type="text" name ="trip[start_station]" placeholder="start station">
+          <input type="text" name ="trip[start_station_name]" placeholder="start station">
         </div>
+      </div>
+      <label class="control-label">Start Station ID</label>
+      <div class="controls">
+        <input type="text" name ="trip[start_station_id]" placeholder="start station">
       </div>
       <div class="control-group">
         <label class="control-label">End Date</label>
@@ -32,9 +36,15 @@
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label">End Station</label>
+        <label class="control-label">End Station Name</label>
         <div class="controls">
-          <input type="text" name ="trip[end_station]" placeholder="end station">
+          <input type="text" name ="trip[end_station_name]" placeholder="end station">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">End Station ID</label>
+        <div class="controls">
+          <input type="text" name ="trip[end_station_id]" placeholder="end station">
         </div>
       </div>
       <div class="control-group">
