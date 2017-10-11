@@ -24,6 +24,7 @@ RSpec.describe "When a user edits a condition '/conditions/:id/edit" do
     fill_in 'weather[precipitation_inches]',   with: 3
     fill_in 'weather[zip_code]',               with: 80214
     click_on "Save Changes"
+    save_and_open_page
 
     expect(page).to have_content("65")
     expect(page).to have_content("35")
