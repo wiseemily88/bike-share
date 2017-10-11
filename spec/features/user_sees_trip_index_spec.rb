@@ -6,7 +6,7 @@ describe "Feature" do
       visit "/trips"
 
       within("#body-content") do
-        expect(page).to have_content("Here are some Trips")
+        expect(page).to have_content("Trips Taken")
       end
     end
   end
