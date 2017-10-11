@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/condition/show.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-center" id="body-content">
+        <h1 class="display-4">Whats yo Condition! </h1>
+        <div class="row">
+          <div class="col-md-12">
+            <h2> <%= @condition.date %> </h2>
+            <h5> Max Temp F: <%= @condition.max_temperature_f %> </h5>
+            <h5> Min Temp F: <%= @condition.min_temperature_f %> </h5>
+            <h5> Mean Temp F: <%= @condition.mean_temperature_f %> </h5>
+            <h5> Mean Humidity: <%= @condition.mean_humidity %> </h5>
+            <h5> Mean Visibility Miles: <%= @condition.mean_visibility_miles %> </h5>
+            <h5> Mean Wind Speed MPH: <%= @condition.mean_wind_speed_mph %> </h5>
+            <h5> Precipitation Inch: <%= @condition.precipitation_inches %> </h5>
+
+            <div class="col-sm-12">
+              <form action="/conditions/<%=@condition.id %>" method="POST" >
+                <input type="hidden" name="_method" value="DELETE">
+                <div class="btn-group">
+                  <input type="submit" class="btn btn-danger btn-sm" value="Delete Condition">
+                  <a  href="/conditions/<%=@condition.id%>/edit" class="btn btn-info btn-sm">Edit</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
