@@ -43,128 +43,39 @@
     <div class="col-sm-3">
       <div class="well">
         <h4>Most Popular Start Station</h4>
-            <p><%= @trips.highest_starting_place %></p>
+            <p><%= @trips.highest_starting_place.name %></p>
       </div>
     </div>
     <div class="col-sm-3">
         <div class="well">
           <h4>Most Popular End Station</h4>
-              <p><%= @trips.highest_ending_place %></p>
+              <p><%= @trips.highest_ending_place.name %></p>
         </div>
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>January</h4>
-          <p><%= @trips.monthly_rides(1) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(1, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(1, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(1, 2015) %></p>
+    <% trips_2013 = @trips.yearly_rides(2013) %>
+    <% trips_2014 = @trips.yearly_rides(2014) %>
+    <% trips_2015 = @trips.yearly_rides(2015) %>
+    <% months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ] %>
+    <% months.each_with_index do |month, index| %>
+      <% i = (index + 1).to_f %>
+      <% num_2013 = trips_2013[i] != nil ? trips_2013[i] : 0 %>
+      <% num_2014 = trips_2014[i] != nil ? trips_2014[i] : 0 %>
+      <% num_2015 = trips_2015[i] != nil ? trips_2015[i] : 0 %>
+      <% month_sum = num_2013 + num_2014 + num_2015 %>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4><%= month %></h4>
+            <p><%= month_sum %> rides</p>
+            <p>2013: <%= num_2013 %> rides</p>
+            <p>2014: <%= num_2014 %> rides</p>
+            <p>2015: <%= num_2015 %> rides</p>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>February</h4>
-          <p><%= @trips.monthly_rides(2) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(2, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(2, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(2, 2015) %></p>
-
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>March</h4>
-          <p><%= @trips.monthly_rides(3) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(3, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(3, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(3, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>April</h4>
-          <p><%= @trips.monthly_rides(4) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(4, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(4, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(4, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>May</h4>
-          <p><%= @trips.monthly_rides(5) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(5, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(5, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(5, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>June</h4>
-          <p><%= @trips.monthly_rides(6) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(6, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(6, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(6, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>July</h4>
-        <p><%= @trips.monthly_rides(7) %> rides</p>
-        <p>2013 <%=@trips.yearly_rides(7, 2013) %></p>
-        <p>2014 <%=@trips.yearly_rides(7, 2014) %></p>
-        <p>2015 <%=@trips.yearly_rides(7, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>August</h4>
-          <p><%= @trips.monthly_rides(8) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(8, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(8, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(8, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>September</h4>
-          <p><%= @trips.monthly_rides(9) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(9, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(9, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(9, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>October</h4>
-          <p><%= @trips.monthly_rides(10) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(10, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(10, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(10, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>November</h4>
-          <p><%= @trips.monthly_rides(11) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(11, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(11, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(11, 2015) %></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>December</h4>
-          <p><%= @trips.monthly_rides(12) %> rides</p>
-          <p>2013 <%=@trips.yearly_rides(12, 2013) %></p>
-          <p>2014 <%=@trips.yearly_rides(12, 2014) %></p>
-          <p>2015 <%=@trips.yearly_rides(12, 2015) %></p>
-      </div>
-    </div>
+    <% end %>
   </div>
 
     <div class="row">
@@ -197,14 +108,14 @@
         <div class="col-sm-4">
           <div class="well">
             <h4>Most Popular Date</h4>
-              <p>Date: <%= @trips.highest_trip_count[0] %></p>
+              <p>Date: <%= @trips.highest_trip_count[0].strftime(format='%m/%d/%Y') %></p>
               <p>Trips: <%= @trips.highest_trip_count[1] %></p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="well">
             <h4>Least Popular Date</h4>
-              <p>Date: <%= @trips.lowest_trip_count[0] %></p>
+              <p>Date: <%= @trips.lowest_trip_count[0].strftime(format='%m/%d/%Y') %></p>
               <p>Trips: <%= @trips.lowest_trip_count[1] %></p>
           </div>
         </div>

@@ -1,8 +1,7 @@
 class Trip < ActiveRecord::Base
   belongs_to :start_station,  class_name: "Station"
   belongs_to :end_station,  class_name: "Station"
-  belongs_to :condition,  class_name: "Condition"
-
+  belongs_to :condition,  class_name: "Condition", primary_key: "date"
 
   validates :duration,          presence: true
   validates :start_date,        presence: true
@@ -38,8 +37,9 @@ class Trip < ActiveRecord::Base
     where("extract(month from start_date) = ?", month).count
   end
 
-  def self.yearly_rides(monthly, yearly)
-    where("extract(month from start_date) = ? and extract(year from start_date) = ?", monthly, yearly).count
+  def self.yearly_rides(year)
+    where("extract(year from start_date) = ?", year)
+          .group("date_part('month', start_date)").count
   end
 
   def self.most_ridden_bike
