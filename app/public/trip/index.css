@@ -21,6 +21,8 @@ h5 {
 
 .pagination {
   margin-top: 20px;
+  display: block;
+  text-align: center;
 }
 
 #body-content {
