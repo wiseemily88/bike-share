@@ -83,36 +83,20 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-6">
         <div class="well">
           <h4>Visibilty 4 - 8 Miles </h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Average number of rides: <%= @conditions.average_trips_with_visibility(4, 8) %></p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_visibility(4, 8) %></p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_visibility(4, 8) %></p>
         </div>
       </div>
-      <div class="col-sm-3" >
+      <div class="col-sm-6" >
         <div class="well">
-          <h4>Visibilty 9 - 13 Miles </h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Visibilty 14 - 18 Miles </h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Visibilty 19 - 23 Miles </h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <h4>Visibilty 9 - 12 Miles </h4>
+          <p> Average number of rides: <%= @conditions.average_trips_with_visibility(9, 12)%></p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_visibility(9, 12) %></p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_visibility(9, 12) %></p>
         </div>
       </div>
     </div>
