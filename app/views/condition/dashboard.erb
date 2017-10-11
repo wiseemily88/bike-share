@@ -60,25 +60,25 @@
     <div class="col-sm-4">
       <div class="well">
         <h4>Precipitation  0 - .5 inches </h4>
-        <p> Average number of rides: Change me</p>
-        <p> Highest number of rides: Change me</p>
-        <p> Lowest number of rides: Change me</p>
+        <p> Average number of rides: <%= @conditions.average_trips_with_precipitation(0, 0.5) %></p>
+        <p> Highest number of rides: <%= @conditions.highest_trips_with_precipitation(0, 0.5) %></p>
+        <p> Lowest number of rides: <%= @conditions.lowest_trips_with_precipitation(0, 0.5) %></p>
       </div>
     </div>
       <div class="col-sm-4">
         <div class="well">
           <h4>Precipitation  .5 - 1 inches</h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Average number of rides: <%= @conditions.average_trips_with_precipitation(0.5, 1) %></p>
+          <p> Highest number of rides: <%= @conditions.highest_trips_with_precipitation(0.5, 1) %></p>
+          <p> Lowest number of rides: <%= @conditions.lowest_trips_with_precipitation(0.5, 1) %></p>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="well">
           <h4>Precipitation  1 - 1.5 inches</h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Average number of rides: <%= @conditions.average_trips_with_precipitation(1, 1.5) %></p>
+          <p> Highest number of rides: <%= @conditions.highest_trips_with_precipitation(1, 1.5) %></p>
+          <p> Lowest number of rides: <%= @conditions.lowest_trips_with_precipitation(1, 1.5) %></p>
         </div>
       </div>
     </div>

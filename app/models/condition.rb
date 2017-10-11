@@ -43,6 +43,35 @@ class Condition < ActiveRecord::Base
     .first
   end 
 
+  def self.trips_with_precipitation(min, max)
+    joins(:trips)
+    .where("precipitation_inches >= ? AND precipitation_inches <= ?", min, max)
+  end
+
+  def self.average_trips_with_precipitation(min, max)
+    trips = trips_with_precipitation(min, max).count
+    total_days = where("precipitation_inches >= ? AND precipitation_inches <= ?", min, max).count
+    (trips/total_days).round(2)
+  end
+
+  def self.highest_trips_with_precipitation(min, max)
+    trips_with_precipitation(min, max)
+    .group(:start_date)
+    .order("count_all DESC")
+    .count
+    .values
+    .first
+  end 
+
+  def self.lowest_trips_with_precipitation(min, max)
+    trips_with_precipitation(min, max)
+    .group(:start_date)
+    .order("count_all ASC")
+    .count
+    .values
+    .first
+  end 
+
   def self.trips_with_wind_speed(min, max)
     joins(:trips)
     .where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max)
