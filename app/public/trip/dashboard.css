@@ -9,6 +9,22 @@ body {
   padding: 40px 20px 40px 20px;
   font-family: "Indie Flower";
 }
+
+.navbar {
+  width: 100%;
+  margin: 0px 0px;
+  font-size: 30px;
+  padding: 10px 10px;
+  background-color: SteelBlue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  margin: 0px 75px;
+}
+
 h1 {
   padding-top: 20px;
   padding-bottom: 20px;
