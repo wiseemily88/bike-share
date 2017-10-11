@@ -10,6 +10,23 @@ body {
   font-family: "Indie Flower";
 }
 
+h1 {
+  font-weight: bold;
+  font-size: 60px;
+  background: rgba(255,255,255,.5)
+}
+
+h4 {
+  font-weight: bold;
+}
+
+p {
+  font-weight: 600;
+}
+li {
+  font-size: 20px;
+}
+
 .navbar {
   width: 100%;
   margin: 0px 0px;
@@ -25,23 +42,6 @@ body {
   margin: 0px 75px;
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 60px;
-  background: rgba(255,255,255,.5)
-}
-
-h4 {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-p {
-  font-size: 30px;
-}
-li {
-  font-size: 20px;
-}
 .well {
   color: black;
   background-color: #DDDDDD;

@@ -1,7 +1,19 @@
 <head>
   <link rel="stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/station/new.css">
+  <link rel="stylesheet" type="text/css" href="/station/edit.css">
 </head>
+
+<body>
+<div class="navbar">
+    <div class="nav">
+      <a href="/">Home</a>
+      <a href="/stations">All Stations</a>
+      <a href="/station-dashboard">Station Dashboard</a>
+      <a href="/trips-dashboard">Trip Dashboard</a>
+      <a href="/condition-dashboard">Condition Dashboard</a>
+    </div>
+  </div>
+</div>
 
 <div class="transbox">
   <form class="form-horizontal" action="/stations/<%= @stations.id %>" method="post">
@@ -41,3 +53,4 @@
     </fieldset>
   </form>
 </div>
+</body>
