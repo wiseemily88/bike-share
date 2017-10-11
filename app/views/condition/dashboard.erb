@@ -33,7 +33,7 @@
     <div class="col-sm-3" >
       <div class="well">
         <h4>High Temperature 61 - 70 F</h4>
-          <p> Average number of rides: Change me</p>
+          <p> Average number of rides: <%= Condition.trip_array(61..70).sum / Condition.trip_array(61..70).count %></p>
           <p> Highest number of rides: Change me</p>
           <p> Lowest number of rides: Change me</p>
       </div>
@@ -41,7 +41,7 @@
     <div class="col-sm-3">
       <div class="well">
         <h4>High Temperature 71 - 80 F</h4>
-          <p> Average number of rides: Change me</p>
+          <p> Average number of rides: <%= Condition.trip_array(71..80).sum / Condition.trip_array(71..80).count %></p>
           <p> Highest number of rides: Change me</p>
           <p> Lowest number of rides: Change me</p>
       </div>
@@ -49,7 +49,7 @@
     <div class="col-sm-3">
       <div class="well">
         <h4>High Temperature 81 - 90 F</h4>
-          <p> Average number of rides: Change me</p>
+          <p> Average number of rides: <%= Condition.trip_array(81..90).sum / Condition.trip_array(81..90).count %></p>
           <p> Highest number of rides: Change me</p>
           <p> Lowest number of rides: Change me</p>
       </div>
