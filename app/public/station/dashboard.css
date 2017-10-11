@@ -10,6 +10,21 @@ body {
   font-family: "Indie Flower";
 }
 
+.navbar {
+  width: 100%;
+  margin: 0px 0px;
+  padding: 10px 10px;
+  font-size: 30px;
+  background-color: SteelBlue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  margin: 0px 75px;
+}
+
 h1 {
   font-weight: bold;
   font-size: 60px;

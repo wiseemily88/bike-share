@@ -1,6 +1,9 @@
 class Trip < ActiveRecord::Base
   belongs_to :start_station,  class_name: "Station"
   belongs_to :end_station,  class_name: "Station"
+  belongs_to :condition_date,  class_name: "Condition"
+
+
 
   validates :duration,          presence: true
   validates :start_date,        presence: true
@@ -11,10 +14,6 @@ class Trip < ActiveRecord::Base
   validates :end_station_id,    presence: true
   validates :bike_id,           presence: true
   validates :subscription_type, presence: true
-
-  def self.sort_trips_by_start_date(page)
-    sort_by("start_date").take(page*30).drop((page-1)*30)
-  end
 
   def self.average_ride
     (average("duration")/60).round(2)
@@ -29,11 +28,11 @@ class Trip < ActiveRecord::Base
   end
 
   def self.highest_starting_place
-    group("start_station").order("count_all DESC").count.keys.first
+    group("start_station_name").order("count_all DESC").count.keys.first
   end
 
   def self.highest_ending_place
-    group("end_station").order("count_all DESC").count.keys.first
+    group("end_station_name").order("count_all DESC").count.keys.first
   end
 
   def self.monthly_rides(month)

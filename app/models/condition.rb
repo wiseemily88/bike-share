@@ -1,4 +1,6 @@
 class Condition < ActiveRecord::Base
+  has_many :trip_conditions , class_name: "Trips", foreign_key: "start_date"
+
   validates :date,                presence: true, uniqueness: true
   validates :max_temperature_f,    presence: true
   validates :min_temperature_f,   presence: true
@@ -8,7 +10,5 @@ class Condition < ActiveRecord::Base
   validates :mean_wind_Speed_mph,  presence: true
   validates :precipitation_inches,presence: true
   validates :zip_code,            presence: true
-
-
 
 end
