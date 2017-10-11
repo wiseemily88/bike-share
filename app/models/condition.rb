@@ -16,15 +16,60 @@ class Condition < ActiveRecord::Base
   def self.trips_with_wind_speed(min, max)
     joins(:trips)
     .where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max)
-    .count
   end
 
   def self.average_trips_with_wind_speed(min, max)
-    trips = trips_with_wind_speed(min, max)
+    trips = trips_with_wind_speed(min, max).count
     total_days = where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max).count
     (trips/total_days).round(2)
   end
 
+  def self.max_trips_with_wind_speed(min, max)
+    trips = trips_with_wind_speed(min, max)
+    trips.group('start_date')
+    .order('count_all DESC')
+    .count
+    .values
+    .first
+  end
+
+  def self.min_trips_with_wind_speed(min, max)
+    trips = trips_with_wind_speed(min, max)
+    trips.group('start_date')
+    .order('count_all DESC')
+    .count
+    .values
+    .last
+  end
+
+  def self.trips_with_visibility(min, max)
+    joins(:trips)
+    .where("mean_visibility_miles >= ? AND mean_visibility_miles <= ?", min, max)
+  end
+
+  def self.average_trips_with_visibility(min, max)
+    trips = trips_with_visibility(min, max).count
+    total_days = where("mean_visibility_miles >= ? AND mean_visibility_miles <= ?", min, max).count
+    total_days == 0 ? 0 : (trips/total_days).round(2)
+  end
+
+  def self.max_trips_with_visibility(min, max)
+    trips = trips_with_visibility(min, max)
+    trips.group('start_date')
+    .order('count_all DESC')
+    .count
+    .values
+    .first
+  end
+
+  def self.min_trips_with_visibility(min, max)
+    trips = trips_with_visibility(min, max)
+    trips.group('start_date')
+    .order('count_all DESC')
+    .count
+    .values
+    .last
+  end
 
 
 end

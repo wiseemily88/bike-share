@@ -83,36 +83,20 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-6">
         <div class="well">
           <h4>Visibilty 4 - 8 Miles </h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Average number of rides: <%= @conditions.average_trips_with_visibility(4, 8) %></p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_visibility(4, 8) %></p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_visibility(4, 8) %></p>
         </div>
       </div>
-      <div class="col-sm-3" >
+      <div class="col-sm-6" >
         <div class="well">
-          <h4>Visibilty 9 - 13 Miles </h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Visibilty 14 - 18 Miles </h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Visibilty 19 - 23 Miles </h4>
-          <p> Average number of rides: Change me</p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <h4>Visibilty 9 - 12 Miles </h4>
+          <p> Average number of rides: <%= @conditions.average_trips_with_visibility(9, 12)%></p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_visibility(9, 12) %></p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_visibility(9, 12) %></p>
         </div>
       </div>
     </div>
@@ -122,24 +106,24 @@
         <div class="well">
           <h4>Wind Speed 0 - 4 MPH </h4>
           <p> Average number of rides: <%= @conditions.average_trips_with_wind_speed(0, 4) %></p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_wind_speed(0, 4) %></p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_wind_speed(0, 4) %></p>
         </div>
       </div>
       <div class="col-sm-4" >
         <div class="well">
           <h4>Wind Speed 5 - 9 MPH  </h4>
           <p> Average number of rides: <%= @conditions.average_trips_with_wind_speed(5, 9) %></p>
-          <p> Highest number of rides: </p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_wind_speed(5, 9) %> </p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_wind_speed(5, 9) %></p>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="well">
           <h4>Wind Speed 10 - 14 MPH  </h4>
           <p> Average number of rides: <%= @conditions.average_trips_with_wind_speed(10, 14) %></p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_wind_speed(10, 14) %></p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_wind_speed(10, 14) %></p>
         </div>
       </div>
     </div>
@@ -148,16 +132,16 @@
         <div class="well">
           <h4>Wind Speed 15 - 19 MPH </h4>
           <p> Average number of rides: <%= @conditions.average_trips_with_wind_speed(15, 19) %></p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_wind_speed(15, 19) %></p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_wind_speed(15, 19) %></p>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="well">
           <h4>Wind Speed 20 - 24 MPH </h4>
           <p> Average number of rides: <%= @conditions.average_trips_with_wind_speed(20, 24) %></p>
-          <p> Highest number of rides: Change me</p>
-          <p> Lowest number of rides: Change me</p>
+          <p> Highest number of rides: <%= @conditions.max_trips_with_wind_speed(20, 24) %></p>
+          <p> Lowest number of rides: <%= @conditions.min_trips_with_wind_speed(20, 24) %></p>
         </div>
       </div>
     </div>
