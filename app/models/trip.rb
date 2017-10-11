@@ -37,8 +37,9 @@ class Trip < ActiveRecord::Base
     where("extract(month from start_date) = ?", month).count
   end
 
-  def self.yearly_rides(monthly, yearly)
-    where("extract(month from start_date) = ? and extract(year from start_date) = ?", monthly, yearly).count
+  def self.yearly_rides(year)
+    where("extract(year from start_date) = ?", year)
+          .group("date_part('month', start_date)").count
   end
 
   def self.most_ridden_bike

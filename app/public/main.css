@@ -1,6 +1,11 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+body{
   background-image: url("/images/sf-bay.jpg");
   /* Photo by Changyu Hu on Unsplash */
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Indie Flower";
 }
 
 .jumbotron {
@@ -15,6 +20,7 @@ body {
     display: flex;
     text-align: center;
     justify-content: space-between;
+    font-weight: 900;
 }
 
 .container {
