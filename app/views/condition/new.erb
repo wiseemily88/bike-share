@@ -2,16 +2,27 @@
   <link rel="stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/condition/new.css">
 </head>
+
 <body>
-  <div class="transbox">
-    <form class="form-horizontal" action="/conditions" method="post">
-      <fieldset>
-        <legend>New Weather Conditions Report</legend>
-        <div class="control-group">
-          <label class="control-label">Date</label>
-          <div class="controls">
-            <input type="date" name ="weather[date]" placeholder="date">
-          </div>
+<div class="navbar">
+    <div class="nav">
+      <a href="/">Home</a>
+      <a href="/conditions">All Conditions</a>
+      <a href="/station-dashboard">Station Dashboard</a>
+      <a href="/trips-dashboard">Trip Dashboard</a>
+      <a href="/condition-dashboard">Condition Dashboard</a>
+    </div>
+  </div>
+</div>
+
+<div class="transbox">
+  <form class="form-horizontal" action="/conditions" method="post">
+    <fieldset>
+      <legend>New Weather Conditions Report</legend>
+      <div class="control-group">
+        <label class="control-label">Date</label>
+        <div class="controls">
+          <input type="date" name ="weather[date]" placeholder="date">
         </div>
         <div class="control-group">
           <label class="control-label">Temperature High</label>
@@ -67,7 +78,8 @@
             <button type="submit" class="btn btn-info">Add New Condition</button>
           </div>
         </div>
-      </fieldset>
-    </form>
-  </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
 </body>
