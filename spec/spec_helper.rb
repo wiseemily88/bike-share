@@ -8,14 +8,13 @@ require 'capybara/dsl'
 require 'date'
 require 'pry'
 
-
-
-
 Capybara.app = BikeShareApp
 
 RSpec.configure do |c|
   c.include Capybara::DSL
 end
+
+Capybara.save_and_open_page_path = 'tmp/capybara'
 
 DatabaseCleaner.strategy = :truncation
 

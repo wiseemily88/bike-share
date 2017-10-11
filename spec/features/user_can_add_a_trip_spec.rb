@@ -15,8 +15,7 @@ RSpec.describe "When a user adds a new trip '/trips/new" do
     fill_in 'trip[zip_code]',           with: 54401
     click_on 'Add New Trip'
 
-    expect(page).to have_content("Station Better Than 1")
-    expect(page).to have_content(120)
-    expect(page).to have_content("Customer")
+    expect(page).to have_content("Trips Taken")
+    expect(page).to have_content("08/28/2013")
   end
 end
