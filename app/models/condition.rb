@@ -8,4 +8,7 @@ class Condition < ActiveRecord::Base
   validates :mean_wind_Speed_mph,  presence: true
   validates :precipitation_inches,presence: true
   validates :zip_code,            presence: true
+
+
+
 end
