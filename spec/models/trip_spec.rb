@@ -116,8 +116,8 @@ RSpec.describe Trip do
     end
   end
 
-  describe "trip stats" do 
-    before do 
+  describe "trip stats" do
+    before do
       2.times do
           Trip.create(
             duration: 63,
@@ -129,12 +129,12 @@ RSpec.describe Trip do
             end_station_id: 66,
             bike_id: 520,
             zip_code: 94127,
-            subscription_type: "Customer" 
+            subscription_type: "Customer"
           )
       end
     end
 
-    let!(:trip) do 
+    let!(:trip) do
       Trip.create(
         duration: 633456,
         start_date: DateTime.new(2014,8,23,14,13),
@@ -145,7 +145,7 @@ RSpec.describe Trip do
         end_station_id: 66,
         bike_id: 400,
         zip_code: 94127,
-        subscription_type: "Subscriber" 
+        subscription_type: "Subscriber"
       )
     end
 
@@ -163,18 +163,18 @@ RSpec.describe Trip do
 
     describe ".shortest_ride" do
       it "returns shortest ride" do
-        expect(Trip.shortest_ride).to eq (1)  
+        expect(Trip.shortest_ride).to eq (1)
       end
     end
 
-    describe ".highest_starting_place" do 
-      it "returns station with the most rides as a starting place" do 
+    describe ".highest_starting_place" do
+      it "returns station with the most rides as a starting place" do
         expect(Trip.highest_starting_place).to eq ("South Van Ness at Market")
       end
     end
 
-    describe ".highest_ending_place" do 
-      it "returns startingtation with the most rides as an ending place" do 
+    describe ".highest_ending_place" do
+      it "returns startingtation with the most rides as an ending place" do
         expect(Trip.highest_ending_place).to eq ("South Van Ness at Market")
       end
     end
@@ -193,13 +193,13 @@ RSpec.describe Trip do
 
     describe ".yearly_rides" do
       it "returns most ridden bike w/total rides for that bike" do
-        expect(Trip.yearly_rides(8, 2014)).to eq (1)
+        expect(Trip.yearly_rides(2014).values.first).to eq (1)
       end
     end
 
     describe ".yearly_rides" do
       it "returns most ridden bike w/total rides for that bike" do
-        expect(Trip.yearly_rides(10, 2013)).to eq (2)
+        expect(Trip.yearly_rides(2013).values.first).to eq (2)
       end
     end
 
@@ -227,13 +227,13 @@ RSpec.describe Trip do
       end
     end
 
-    describe ".highest_trip_count" do 
+    describe ".highest_trip_count" do
       it "returns highest trip count" do
         expect(Trip.highest_trip_count[1]).to eq (2)
       end
     end
 
-    describe ".lowest_trip_count" do 
+    describe ".lowest_trip_count" do
       it "returns lowest trip count" do
         expect(Trip.lowest_trip_count[1]).to eq (1)
       end
@@ -254,7 +254,7 @@ RSpec.describe Trip do
             end_station_id: 66,
             bike_id: 520,
             zip_code: 94127,
-            subscription_type: "Customer" 
+            subscription_type: "Customer"
           )
         trip2 = Trip.create(
             duration: 63,
@@ -266,7 +266,7 @@ RSpec.describe Trip do
             end_station_id: 66,
             bike_id: 520,
             zip_code: 94127,
-            subscription_type: "Customer" 
+            subscription_type: "Customer"
           )
         trip3 = Trip.create(
             duration: 63,
@@ -278,21 +278,10 @@ RSpec.describe Trip do
             end_station_id: 66,
             bike_id: 520,
             zip_code: 94127,
-            subscription_type: "Customer" 
+            subscription_type: "Customer"
           )
         expect(Trip.most_ridden_bike).to eq [trip.bike_id, 2]
       end
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
