@@ -295,8 +295,8 @@ describe Station do
          zip_code: 95234
         )
 
-        expect(station_1.most_popular_date).to eq(DateTime.new(2013,8,28,14,14))
-        expect(station_2.most_popular_date).to eq(DateTime.new(2013,8,28,14,14))
+        expect(station_1.most_popular_date).to eq(Date.new(2013,8,28))
+        expect(station_2.most_popular_date).to eq(Date.new(2013,8,28))
       end
     end
 
