@@ -20,9 +20,8 @@ class Condition < ActiveRecord::Base
   end
 
   def self.average_trips_with_wind_speed(min, max)
-    trips = trips_with_wind_speed(min, max)
+    trips = average(trips_with_wind_speed(min, max))
     total_days = where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max).count
-    trips/total_days
-    require 'pry'; binding.pry
+    (trips/total_days).round(2)
   end
 end
