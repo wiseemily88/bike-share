@@ -138,10 +138,10 @@ RSpec.describe Trip do
       Trip.create(
         duration: 633456,
         start_date: DateTime.new(2014,8,23,14,13),
-        start_station_name: "South Van Ness at Market",
+        start_station_name: "Van Ness at Market",
         start_station_id: 66,
         end_date: DateTime.new(2014,8,23,17,17),
-        end_station_name: "South Van Ness at Market",
+        end_station_name: "Van Ness at Market",
         end_station_id: 66,
         bike_id: 400,
         zip_code: 94127,
@@ -167,18 +167,17 @@ RSpec.describe Trip do
       end
     end
 
-    # describe ".highest_starting_place" do 
-    #   require 'pry'; binding.pry  
-    #   it "returns station with the most rides as a starting place" do 
-    #     expect(Trip.highest_starting_place).to eq ("South Van Ness at Market")
-    #   end
-    # end
+    describe ".highest_starting_place" do 
+      it "returns station with the most rides as a starting place" do 
+        expect(Trip.highest_starting_place).to eq ("South Van Ness at Market")
+      end
+    end
 
-    # describe ".highest_ending_place" do 
-    #   it "returns startingtation with the most rides as an ending place" do 
-    #     expect(Trip.highest_ending_place).to eq (2)
-    #   end
-    # end
+    describe ".highest_ending_place" do 
+      it "returns startingtation with the most rides as an ending place" do 
+        expect(Trip.highest_ending_place).to eq ("South Van Ness at Market")
+      end
+    end
 
     describe ".monthly_rides" do
       it "returns monthly breakdown" do

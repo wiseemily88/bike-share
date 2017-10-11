@@ -25,11 +25,11 @@ class Trip < ActiveRecord::Base
   end
 
   def self.highest_starting_place
-    group("start_station").order("count_all DESC").count.keys.first
+    group("start_station_name").order("count_all DESC").count.keys.first
   end
 
   def self.highest_ending_place
-    group("end_station").order("count_all DESC").count.keys.first
+    group("end_station_name").order("count_all DESC").count.keys.first
   end
 
   def self.monthly_rides(month)
