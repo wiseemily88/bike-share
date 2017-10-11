@@ -32,6 +32,5 @@ RSpec.describe "When a user edits a condition '/conditions/:id/edit" do
     expect(page).to have_content("2")
     expect(page).to have_content("10")
     expect(page).to have_content("3")
-    expect(page).to have_content("80214")
   end
 end

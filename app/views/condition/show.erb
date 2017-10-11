@@ -14,7 +14,7 @@
         <h1 class="display-4">Whats yo Condition! </h1>
         <div class="row">
           <div class="col-md-12">
-            <h2> <%= @conditions.date %> </h2>
+            <h2> <%= @conditions.date.strftime(format='%m/%d/%Y') %> </h2>
             <h5> Max Temp F: <%= @conditions.max_temperature_f %> </h5>
             <h5> Min Temp F: <%= @conditions.min_temperature_f %> </h5>
             <h5> Mean Temp F: <%= @conditions.mean_temperature_f %> </h5>

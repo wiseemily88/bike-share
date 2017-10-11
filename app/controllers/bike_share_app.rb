@@ -34,8 +34,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   put '/stations/:id' do
-    @stations = Station.update(params[:id], params[:station])
-
+    Station.update(params[:id], params[:station])
     redirect "/stations/#{params[:id]}"
   end
 
@@ -99,8 +98,8 @@ class BikeShareApp < Sinatra::Base
   end
 
   post '/conditions' do
-    @conditions = Condition.create(params[:condition])
-    redirect "/conditions/#{@conditions.id}"
+    Condition.create(params[:weather])
+    redirect "/conditions"
   end
 
   get '/conditions/:id' do
@@ -114,8 +113,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   put '/conditions/:id' do
-    @conditions = Condition.find(params[:id])
-    @conditions.update(params[:condition])
+    Condition.update(params[:id], params[:weather])
     redirect "/conditions/#{params[:id]}"
   end
 
