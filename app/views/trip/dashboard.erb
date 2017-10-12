@@ -96,6 +96,33 @@
     </div>
 
     <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <h4>Weather on Most Popular Day</h4>
+              <p>High Temp: <%= @trips.highest_number_of_rides.max_temperature_f %> fahrenheit</p>
+              <p>Low Temp: <%= @trips.highest_number_of_rides.min_temperature_f %> fahrenheit</p>
+              <p>Average Temp: <%= @trips.highest_number_of_rides.mean_temperature_f %> fahrenheit</p>
+              <p>Humidity: <%= @trips.highest_number_of_rides.mean_humidity %></p>
+              <p>Visibility: <%= @trips.highest_number_of_rides.mean_visibility_miles %> miles</p>
+              <p>Wind Speed: <%= @trips.highest_number_of_rides.mean_wind_speed_mph %> mph</p>
+              <p>Precipitation: <%= @trips.highest_number_of_rides.precipitation_inches %> inches</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+            <h4>Weather on Least Popular Day</h4>
+              <p>High Temp: <%= @trips.lowest_number_of_rides.max_temperature_f %> fahrenheit</p>
+              <p>Low Temp: <%= @trips.lowest_number_of_rides.min_temperature_f %> fahrenheit</p>
+              <p>Average Temp: <%= @trips.lowest_number_of_rides.mean_temperature_f %> fahrenheit</p>
+              <p>Humidity: <%= @trips.lowest_number_of_rides.mean_humidity %></p>
+              <p>Visibility: <%= @trips.lowest_number_of_rides.mean_visibility_miles %> miles</p>
+              <p>Wind Speed: <%= @trips.lowest_number_of_rides.mean_wind_speed_mph %> mph</p>
+              <p>Precipitation: <%= @trips.lowest_number_of_rides.precipitation_inches %> inches</p>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-sm-4">
           <div class="well">
             <h4>User Subscription Details</h4>
