@@ -9,6 +9,10 @@ gem 'pry'
 gem 'will_paginate', '~>3.1.0'
 gem 'thin', '~>1.7.2'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
   gem 'shotgun'
   gem 'rspec'
