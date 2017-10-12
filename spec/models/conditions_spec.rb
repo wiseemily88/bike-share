@@ -569,5 +569,167 @@ describe "class_methods" do
         end
       end
 
+      describe ".trips_with_precipitation" do
+        it "returns collection of conditions between wind speeds associated with trips" do
+          Trip.create!(
+            duration: 633456,
+            start_date: DateTime.new(2014,8,23,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 66,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 66,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Subscriber")
+
+          Trip.create!(
+            duration: 633456,
+            start_date: DateTime.new(2014,8,23,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 66,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 66,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Subscriber")
+
+          Condition.create!(
+            date: Date.new(2014,8,23),
+            max_temperature_f: 40,
+            min_temperature_f: 30,
+            mean_temperature_f: 35,
+            mean_humidity: 10,
+            mean_visibility_miles: 4 ,
+            mean_wind_speed_mph: 3,
+            precipitation_inches: 4,
+            zip_code: 94127)
+
+          expect(Condition.trips_with_precipitation(0, 4).count).to eq(2)
+        end
+      end
+
+      describe ".average_trips_with_precipitation" do
+        it "returns average precipitation in a range" do
+          Trip.create!(
+            duration: 633456,
+            start_date: DateTime.new(2014,8,23,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 66,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 66,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Subscriber")
+
+          Trip.create!(
+            duration: 633456,
+            start_date: DateTime.new(2014,8,23,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 66,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 66,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Subscriber")
+
+          Condition.create!(
+            date: Date.new(2014,8,23),
+            max_temperature_f: 40,
+            min_temperature_f: 30,
+            mean_temperature_f: 35,
+            mean_humidity: 10,
+            mean_visibility_miles: 4 ,
+            mean_wind_speed_mph: 3,
+            precipitation_inches: 4,
+            zip_code: 94127)
+
+            expect(Condition.average_trips_with_precipitation(0, 4)).to eq(2)
+          end
+        end
+
+      describe ".highest_trips_with_precipitation" do
+        it "returns trip with highest precipitation in range" do
+          Trip.create!(
+            duration: 633456,
+            start_date: DateTime.new(2014,8,23,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 66,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 66,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Subscriber")
+
+          Trip.create!(
+            duration: 633456,
+            start_date: DateTime.new(2014,8,23,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 66,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 66,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Subscriber")
+
+          Condition.create!(
+            date: Date.new(2014,8,23),
+            max_temperature_f: 40,
+            min_temperature_f: 30,
+            mean_temperature_f: 35,
+            mean_humidity: 10,
+            mean_visibility_miles: 4 ,
+            mean_wind_speed_mph: 3,
+            precipitation_inches: 4,
+            zip_code: 94127)
+
+          expect(Condition.highest_trips_with_precipitation(0, 4)).to eq(2)
+        end
+      end
+      describe ".lowest_trips_with_precipitation" do
+        it "returns lowest precipiation in range" do
+          Trip.create!(
+            duration: 633456,
+            start_date: DateTime.new(2014,8,23,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 66,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 66,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Subscriber")
+
+          Trip.create!(
+            duration: 633456,
+            start_date: DateTime.new(2014,8,23,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 66,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 66,
+            bike_id: 401,
+            zip_code: 94927,
+            subscription_type: "Subscriber")
+
+          Condition.create!(
+            date: Date.new(2014,8,23),
+            max_temperature_f: 40,
+            min_temperature_f: 30,
+            mean_temperature_f: 35,
+            mean_humidity: 10,
+            mean_visibility_miles: 4 ,
+            mean_wind_speed_mph: 3,
+            precipitation_inches: 3,
+            zip_code: 94127)
+
+          expect(Condition.lowest_trips_with_precipitation(0, 4)).to eq(2)
+        end
+      end
   end
 end
