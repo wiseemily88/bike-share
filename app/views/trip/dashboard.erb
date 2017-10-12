@@ -120,4 +120,20 @@
           </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <h4>Weather on Most Popular Day</h4>
+              <p>High: <%= @trips.highest_number_of_rides.max_temperature_f %></p>
+          </div>
+        </div>
+        <!-- <div class="col-sm-6">
+          <div class="well">
+            <h4>Most Popular Date</h4>
+              <p>Date: <%= @trips.highest_trip_count[0].strftime(format='%m/%d/%Y') %></p>
+              <p>Trips: <%= @trips.highest_trip_count[1] %></p>
+          </div>
+        </div> -->
+    </div>
 </body>
