@@ -39,8 +39,8 @@ describe Station do
                      dock_count: 1, city: "Denver",
                      installation_date: Date.new(2015, 12, 8))
       station = Station.create(name: "Luis and 3/4",
-                               lat: 37.329732,
-                               long: -121.901782,
+                               lat: 37.22,
+                               long: -121.20,
                                dock_count: 2, city: "Kansas",
                                installation_date: Date.new(2015, 12, 9))
 

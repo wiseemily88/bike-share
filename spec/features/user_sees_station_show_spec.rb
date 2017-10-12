@@ -3,11 +3,11 @@ require "spec_helper"
 RSpec.describe "When a user visits '/stations/:id'" do
 
   let(:station) do
-    Station.create(
-      name: "Miami Bike", 
-      dock_count: 23, 
-      city: "Miami", 
-      installation_date: Date.today, 
+    Station.create!(
+      name: "Miami Bike",
+      dock_count: 23,
+      city: "Miami",
+      installation_date: Date.today,
       lat: 23.23,
       long: 34.32
     )
@@ -17,7 +17,7 @@ RSpec.describe "When a user visits '/stations/:id'" do
     visit "/stations/#{station.id}"
   end
 
-  it "they see a station name" do        
+  it "they see a station name" do
     expect(page).to have_content("Miami Bike")
   end
 
