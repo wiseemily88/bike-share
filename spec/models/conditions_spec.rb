@@ -154,4 +154,19 @@ describe Condition do
       expect(condtion).to_not be_valid
     end
   end
+
+  describe "class_methods" do
+    describe ".trips with max temperature"
+      it "returns collection of conditions between temperatures associated with trips" do
+        Condition.create!(
+        date: Date.new(2013,8,28),
+        max_temperature_f: 40,
+        min_temperature_f: 60,
+        mean_temperature_f: 30,
+        mean_humidity: 10,
+        mean_visibility_miles: 4 ,
+        mean_wind_speed_mph: 1,
+        precipitation_inches: 4)
+    end
+  end
 end
