@@ -22,41 +22,49 @@
   <h1>Weather Dashboard</h1>
 </div>
   <div class="row">
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>High Temperature 50 - 60 F</h4>
-        <p> Average number of rides: <%= @conditions.average_trips_with_max_temperature(50, 60) %></p>
-        <p> Highest number of rides: <%= @conditions.highest_trips_with_max_temperature(50, 60) %></p>
-        <p> Lowest number of rides: <%= @conditions.lowest_trips_with_max_temperature(50, 60) %></p></p>
+  <div class="col-sm-12">
+    <h3> High Temperature </h3>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>High Temperature 50 - 60 F</h4>
+            <p> Average number of rides: <%= @conditions.average_trips_with_max_temperature(50, 60) %></p>
+            <p> Highest number of rides: <%= @conditions.highest_trips_with_max_temperature(50, 60) %></p>
+            <p> Lowest number of rides: <%= @conditions.lowest_trips_with_max_temperature(50, 60) %></p></p>
+          </div>
+        </div>
+        <div class="col-sm-3" >
+          <div class="well">
+            <h4>High Temperature 61 - 70 F</h4>
+            <p> Average number of rides: <%= @conditions.average_trips_with_max_temperature(61, 70) %></p>
+            <p> Highest number of rides: <%= @conditions.highest_trips_with_max_temperature(61, 70) %></p>
+            <p> Lowest number of rides: <%= @conditions.lowest_trips_with_max_temperature(61, 70) %></p></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>High Temperature 71 - 80 F</h4>
+            <p> Average number of rides: <%= @conditions.average_trips_with_max_temperature(71, 80) %></h>
+            <p> Highest number of rides: <%= @conditions.highest_trips_with_max_temperature(71, 80) %></p>
+            <p> Lowest number of rides: <%= @conditions.lowest_trips_with_max_temperature(71, 80) %></p></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>High Temperature 81 - 90 F</h4>
+            <p> Average number of rides: <%= @conditions.average_trips_with_max_temperature(81, 90) %></p>
+            <p> Highest number of rides: <%= @conditions.highest_trips_with_max_temperature(81, 90) %></p>
+            <p> Lowest number of rides: <%= @conditions.lowest_trips_with_max_temperature(81, 90) %></p></p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-3" >
-      <div class="well">
-        <h4>High Temperature 61 - 70 F</h4>
-        <p> Average number of rides: <%= @conditions.average_trips_with_max_temperature(61, 70) %></p>
-        <p> Highest number of rides: <%= @conditions.highest_trips_with_max_temperature(61, 70) %></p>
-        <p> Lowest number of rides: <%= @conditions.lowest_trips_with_max_temperature(61, 70) %></p></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>High Temperature 71 - 80 F</h4>
-        <p> Average number of rides: <%= @conditions.average_trips_with_max_temperature(71, 80) %></h>
-        <p> Highest number of rides: <%= @conditions.highest_trips_with_max_temperature(71, 80) %></p>
-        <p> Lowest number of rides: <%= @conditions.lowest_trips_with_max_temperature(71, 80) %></p></p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-        <h4>High Temperature 81 - 90 F</h4>
-        <p> Average number of rides: <%= @conditions.average_trips_with_max_temperature(81, 90) %></p>
-        <p> Highest number of rides: <%= @conditions.highest_trips_with_max_temperature(81, 90) %></p>
-        <p> Lowest number of rides: <%= @conditions.lowest_trips_with_max_temperature(81, 90) %></p></p>
-      </div>
-    </div>
   </div>
+</div>
 
   <div class="row">
+    <div class="col-sm-12">
+      <h3> Precipitation </h3>
+    <div class="row">
     <div class="col-sm-4">
       <div class="well">
         <h4>Precipitation  0 - .5 inches </h4>
@@ -82,6 +90,12 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h3> High Visibility </h3>
     <div class="row">
       <div class="col-sm-6">
         <div class="well">
@@ -100,7 +114,12 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-sm-12">
+    <h3> Wind Speed </h3>
     <div class="row">
       <div class="col-sm-4">
         <div class="well">
@@ -126,7 +145,6 @@
           <p> Lowest number of rides: <%= @conditions.min_trips_with_wind_speed(10, 14) %></p>
         </div>
       </div>
-    </div>
     <div class="row">
       <div class="col-sm-4">
         <div class="well">
@@ -144,6 +162,8 @@
           <p> Lowest number of rides: <%= @conditions.min_trips_with_wind_speed(20, 24) %></p>
         </div>
       </div>
+    </div>
+  </div>
     </div>
   </div>
 </body>
