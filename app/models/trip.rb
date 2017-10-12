@@ -75,4 +75,9 @@ class Trip < ActiveRecord::Base
     find_by(start_date: date).condition
   end
 
+  def self.lowest_number_of_rides
+    date = group("start_date").order("count_all DESC").count.keys.last.strftime(format='%Y-%m-%d')
+    find_by(start_date: date).condition
+  end
+
 end
