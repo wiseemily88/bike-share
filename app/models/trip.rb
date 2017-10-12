@@ -70,4 +70,10 @@ class Trip < ActiveRecord::Base
     group("start_date").order("count_all ASC").count.first
   end
 
+  def self.highest_number_of_rides
+    most_popular_date= group("start_date").order("count_all DESC").count.keys.first.strftime(format='%Y-%m-%d')
+    Trip.find_by(start_date: most_popular_date).condition
+    require 'pry'; binding.pry
+  end
+
 end
