@@ -172,7 +172,7 @@ RSpec.describe Trip do
         expect(Trip.highest_starting_place).to eq ("South Van Ness at Market")
       end
     end
-    
+
     describe ".highest_ending_place" do
       it "returns startingtation with the most rides as an ending place" do
         expect(Trip.highest_ending_place).to eq ("South Van Ness at Market")
@@ -244,7 +244,7 @@ RSpec.describe Trip do
   describe ".most_ridden_bike" do
     let!(:trip) do
       it "returns most ridden bike ID and trips" do
-        trip1 = Trip.create(
+        Trip.create(
             duration: 63,
             start_date: DateTime.new(2013,10,29,14,13),
             start_station_name: "South Van Ness at Market",
@@ -256,7 +256,7 @@ RSpec.describe Trip do
             zip_code: 94127,
             subscription_type: "Customer"
           )
-        trip2 = Trip.create(
+        Trip.create(
             duration: 63,
             start_date: DateTime.new(2013,10,29,14,13),
             start_station_name: "South Van Ness at Market",
@@ -268,7 +268,7 @@ RSpec.describe Trip do
             zip_code: 94127,
             subscription_type: "Customer"
           )
-        trip3 = Trip.create(
+        Trip.create(
             duration: 63,
             start_date: DateTime.new(2013,10,29,14,13),
             start_station_name: "South Van Ness at Market",
