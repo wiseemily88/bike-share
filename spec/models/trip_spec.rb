@@ -172,7 +172,7 @@ RSpec.describe Trip do
         expect(Trip.highest_starting_place).to eq ("South Van Ness at Market")
       end
     end
-
+    
     describe ".highest_ending_place" do
       it "returns startingtation with the most rides as an ending place" do
         expect(Trip.highest_ending_place).to eq ("South Van Ness at Market")
