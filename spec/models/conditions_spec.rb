@@ -278,7 +278,133 @@ describe "class_methods" do
         expect(Condition.average_trips_with_max_temperature(30, 50)).to eq(2)
       end
     end
+    describe ".trips with average max temperature" do
+      it "returns average trips between temperatures" do
+        Trip.create!(
+          duration: 633456,
+          start_date: DateTime.new(2014,8,23,14,13),
+          start_station_name: "Van Ness at Market",
+          start_station_id: 66,
+          end_date: DateTime.new(2014,8,23,17,17),
+          end_station_name: "Van Ness at Market",
+          end_station_id: 66,
+          bike_id: 400,
+          zip_code: 94127,
+          subscription_type: "Subscriber")
 
-    
+        Trip.create!(
+          duration: 644456,
+          start_date: DateTime.new(2014,8,23,14,13),
+          start_station_name: "Van Ness at Market",
+          start_station_id: 40,
+          end_date: DateTime.new(2014,8,23,17,17),
+          end_station_name: "Van Ness at Market",
+          end_station_id: 40,
+          bike_id: 400,
+          zip_code: 94127,
+          subscription_type: "Subscriber")
+
+          Trip.create!(
+            duration: 644356,
+            start_date: DateTime.new(2014,8,24,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 40,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 40,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Customer")
+
+        Condition.create!(
+          date: Date.new(2014,8,23),
+          max_temperature_f: 40,
+          min_temperature_f: 30,
+          mean_temperature_f: 35,
+          mean_humidity: 10,
+          mean_visibility_miles: 4 ,
+          mean_wind_speed_mph: 1,
+          precipitation_inches: 4,
+          zip_code: 94127)
+
+          Condition.create!(
+            date: Date.new(2014,8,24),
+            max_temperature_f: 40,
+            min_temperature_f: 30,
+            mean_temperature_f: 35,
+            mean_humidity: 10,
+            mean_visibility_miles: 4 ,
+            mean_wind_speed_mph: 1,
+            precipitation_inches: 4,
+            zip_code: 94127)
+
+        expect(Condition.highest_trips_with_max_temperature(30, 50)).to eq(2)
+      end
+    end
+
+    describe ".trips with average max temperature" do
+      it "returns average trips between temperatures" do
+        Trip.create!(
+          duration: 633456,
+          start_date: DateTime.new(2014,8,23,14,13),
+          start_station_name: "Van Ness at Market",
+          start_station_id: 66,
+          end_date: DateTime.new(2014,8,23,17,17),
+          end_station_name: "Van Ness at Market",
+          end_station_id: 66,
+          bike_id: 400,
+          zip_code: 94127,
+          subscription_type: "Subscriber")
+
+        Trip.create!(
+          duration: 644456,
+          start_date: DateTime.new(2014,8,23,14,13),
+          start_station_name: "Van Ness at Market",
+          start_station_id: 40,
+          end_date: DateTime.new(2014,8,23,17,17),
+          end_station_name: "Van Ness at Market",
+          end_station_id: 40,
+          bike_id: 400,
+          zip_code: 94127,
+          subscription_type: "Subscriber")
+
+          Trip.create!(
+            duration: 644356,
+            start_date: DateTime.new(2014,8,24,14,13),
+            start_station_name: "Van Ness at Market",
+            start_station_id: 40,
+            end_date: DateTime.new(2014,8,23,17,17),
+            end_station_name: "Van Ness at Market",
+            end_station_id: 40,
+            bike_id: 400,
+            zip_code: 94127,
+            subscription_type: "Customer")
+
+          Condition.create!(
+            date: Date.new(2014,8,23),
+            max_temperature_f: 40,
+            min_temperature_f: 30,
+            mean_temperature_f: 35,
+            mean_humidity: 10,
+            mean_visibility_miles: 4 ,
+            mean_wind_speed_mph: 1,
+            precipitation_inches: 4,
+            zip_code: 94127)
+
+          Condition.create!(
+            date: Date.new(2014,8,24),
+            max_temperature_f: 40,
+            min_temperature_f: 30,
+            mean_temperature_f: 35,
+            mean_humidity: 10,
+            mean_visibility_miles: 4 ,
+            mean_wind_speed_mph: 1,
+            precipitation_inches: 4,
+            zip_code: 94127)
+
+        expect(Condition.lowest_trips_with_max_temperature(30, 50)).to eq(1)
+      end
+    end
+
   end
 end
