@@ -1,7 +1,7 @@
 class Trip < ActiveRecord::Base
   belongs_to :start_station,  class_name: "Station"
   belongs_to :end_station,  class_name: "Station"
-  belongs_to :condition,  class_name: "Condition", primary_key: "date"
+  belongs_to :condition,  class_name: "Condition", foreign_key: "start_date", primary_key: "date"
 
   validates :duration,          presence: true
   validates :start_date,        presence: true
@@ -68,6 +68,12 @@ class Trip < ActiveRecord::Base
 
   def self.lowest_trip_count
     group("start_date").order("count_all ASC").count.first
+  end
+
+  def self.highest_number_of_rides
+    most_popular_date= group("start_date").order("count_all DESC").count.keys.first.strftime(format='%Y-%m-%d')
+    Trip.find_by(start_date: most_popular_date).condition
+    require 'pry'; binding.pry
   end
 
 end
