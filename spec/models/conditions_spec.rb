@@ -197,7 +197,7 @@ describe "class_methods" do
       end
     end
 
-    describe ".trips with average max temperature" do
+    describe ".average trips with max temperature" do
       it "returns average trips between temperatures" do
         Trip.create!(
           duration: 633456,
@@ -238,8 +238,8 @@ describe "class_methods" do
         end
       end
 
-    describe ".trips with average max temperature" do
-      it "returns average trips between temperatures" do
+    describe ".average trips with average max temperature" do
+      it "returns average of average trips between temperatures" do
         Trip.create!(
           duration: 633456,
           start_date: DateTime.new(2014,8,23,14,13),
@@ -278,8 +278,8 @@ describe "class_methods" do
         expect(Condition.average_trips_with_max_temperature(30, 50)).to eq(2)
       end
     end
-    describe ".trips with average max temperature" do
-      it "returns average trips between temperatures" do
+    describe ".highest trips with max temperature" do
+      it "returns highest trips between temperatures" do
         Trip.create!(
           duration: 633456,
           start_date: DateTime.new(2014,8,23,14,13),
@@ -342,8 +342,8 @@ describe "class_methods" do
       end
     end
 
-    describe ".trips with average max temperature" do
-      it "returns average trips between temperatures" do
+    describe ".lowest trips with max temperature" do
+      it "returns lowest trips between temperatures" do
         Trip.create!(
           duration: 633456,
           start_date: DateTime.new(2014,8,23,14,13),
