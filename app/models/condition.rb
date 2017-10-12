@@ -22,7 +22,7 @@ class Condition < ActiveRecord::Base
   def self.average_trips_with_max_temperature(min, max)
     trips = trips_with_max_temperature(min, max).count
     total_days = where("max_temperature_f >= ? AND max_temperature_f <= ?", min, max).count
-    (trips/total_days).round(2)
+    total_days == 0 ? 0 : (trips/total_days).round(2)
   end
 
   def self.highest_trips_with_max_temperature(min, max)
@@ -32,7 +32,7 @@ class Condition < ActiveRecord::Base
     .count
     .values
     .first
-  end 
+  end
 
   def self.lowest_trips_with_max_temperature(min, max)
     trips_with_max_temperature(min, max)
@@ -41,7 +41,7 @@ class Condition < ActiveRecord::Base
     .count
     .values
     .first
-  end 
+  end
 
   def self.trips_with_precipitation(min, max)
     joins(:trips)
@@ -51,7 +51,7 @@ class Condition < ActiveRecord::Base
   def self.average_trips_with_precipitation(min, max)
     trips = trips_with_precipitation(min, max).count
     total_days = where("precipitation_inches >= ? AND precipitation_inches <= ?", min, max).count
-    (trips/total_days).round(2)
+    total_days == 0 ? 0 : (trips/total_days).round(2)
   end
 
   def self.highest_trips_with_precipitation(min, max)
@@ -61,7 +61,7 @@ class Condition < ActiveRecord::Base
     .count
     .values
     .first
-  end 
+  end
 
   def self.lowest_trips_with_precipitation(min, max)
     trips_with_precipitation(min, max)
@@ -70,7 +70,7 @@ class Condition < ActiveRecord::Base
     .count
     .values
     .first
-  end 
+  end
 
   def self.trips_with_wind_speed(min, max)
     joins(:trips)
@@ -80,7 +80,7 @@ class Condition < ActiveRecord::Base
   def self.average_trips_with_wind_speed(min, max)
     trips = trips_with_wind_speed(min, max).count
     total_days = where("mean_wind_speed_mph >= ? AND mean_wind_speed_mph <= ?", min, max).count
-    (trips/total_days).round(2)
+    total_days == 0 ? 0 : (trips/total_days).round(2)
   end
 
   def self.max_trips_with_wind_speed(min, max)
@@ -129,6 +129,4 @@ class Condition < ActiveRecord::Base
     .values
     .last
   end
-
-
 end
