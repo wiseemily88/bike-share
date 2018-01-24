@@ -1,6 +1,6 @@
 # Bike Share
 
-This is the first group project using Ruby and Sinatra.
+This is the first group project using Ruby and Sinatra developed as the first web application at the Turing School of Software and Design.
 
 ## Abstract
 
